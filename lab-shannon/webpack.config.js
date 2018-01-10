@@ -10,9 +10,7 @@ module.exports = {
     path: `${__dirname}/src/build`,
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: `${__dirname}/src/index.html`,
-    }),
+    new HtmlWebpackPlugin(),
     new ExtractPlugin(`bundle.[hash].scss`),
   ],
   module: {

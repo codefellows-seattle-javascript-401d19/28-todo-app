@@ -37,6 +37,7 @@ Standard JavaScript with ES6, SASS, CSS, HTML
 * resolve-url-loader
 * sass-loader
 * superagent
+* uuid
 * webpack
 * webpack-dev-server
 * eslint

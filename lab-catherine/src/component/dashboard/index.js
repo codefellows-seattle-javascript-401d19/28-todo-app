@@ -22,17 +22,15 @@ class Dashboard extends React.Component {
     note.id = uuid.v1(),
     note.editing = false,
     note.completed = false,
-    // note.content = {content},
-    // note.title = {title},
 
     this.setState(previousState => {
       return {notes: [...previousState.notes, note]};
     });
   }
 
-  // handleRemoveNote(note) {
-
-  // }
+  handleRemoveNote(note) {
+    
+  }
 
   render() {
     return (
@@ -42,7 +40,8 @@ class Dashboard extends React.Component {
         <ul>
           {
             this.state.notes.map((note, index) => 
-              <li key={index}>{note.title}: {note.content}</li>)
+              <li key={index}>Title: {note.title} Content: {note.content}  <button type='button'>Delete</button></li>
+            )
           }
         </ul>
       </div>

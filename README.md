@@ -18,7 +18,7 @@
 * **package.json** -- with all dependencies and dev-dependencies 
 * **webpack.config.js** -- with webpack config
 * **src/** -- containing the front end code
-* **src/__test__** -- containing the frontend tests
+* **src/\_\_test\_\_** -- containing the frontend tests
 * **src/component** -- containing react components
 * **src/main.js** -- containing the entire app component
 * **src/style** -- containing your sass

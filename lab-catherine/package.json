@@ -8,6 +8,13 @@
     "watch": "webpack-dev-server --inline --hot",
     "build": "webpack"
   },
+
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(svg|eof|ttf|woff|woff2|scss|gif)$": "<rootDir>/src/__test__/mock-asset.js"
+    }
+  },
+  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ccloops/28-todo-app.git"

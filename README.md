@@ -10,7 +10,7 @@
   * Submit a question, observation, and how long you spent on canvas  
 
 ## Configuration    
-* **README.md** -- with a documentation about your lab
+* **README.md** -- with documentation about your lab
 * **.babelrc** -- with all dependencies and dev-dependencies 
 * **.eslintrc.json** -- with the class .eslintrc.json file
 * **.gitignore** -- with a robust gitignore

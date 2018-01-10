@@ -2,11 +2,13 @@
   "name": "lab-cameron",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "webpack.config.js",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
+    "build": "webpack",
+    "watch": "webpack-dev-server --inline --hot",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -25,6 +27,7 @@
     "node-sass": "^4.7.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
     "resolve-url-loader": "^2.2.1",
     "sass-loader": "^6.0.6",
     "superagent": "^3.8.2",

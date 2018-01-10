@@ -1,0 +1,12 @@
+{
+  "name": "lab-david",
+  "version": "1.0.0",
+  "description": "This is a cowsay generator built on ReactJS.",
+  "main": ".babelrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

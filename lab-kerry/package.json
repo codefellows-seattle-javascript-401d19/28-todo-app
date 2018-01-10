@@ -4,6 +4,9 @@
   "description": "React Note Taking App",
   "main": "webpack.config.js",
   "scripts": {
+    "start": "react-scripts start",
+    "watch": "webpack-dev-server --inline --hot",
+    "build": "webpack",
     "test": "jest -i --coverage"
   },
   "jest": {
@@ -18,6 +21,7 @@
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.8",
     "extract-text-webpack-plugin": "^3.0.2",
     "html-webpack-plugin": "^2.30.1",

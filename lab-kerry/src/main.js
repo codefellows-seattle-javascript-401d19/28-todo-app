@@ -5,4 +5,4 @@ import App from './component/app';
 const container = document.createElement('div');
 document.body.appendChild(container);
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<App />, container);

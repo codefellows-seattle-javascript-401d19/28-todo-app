@@ -1,21 +1,19 @@
 # Code Fellows: Code 401d19: Full-Stack JavaScript
 
-## Lab 27: Reddit Search Engine
-### 1/9/18
+## Lab 28: Todo App
+### 1/10/18
 
-The purpose of this lab is to get more familiar with react, and to practice passing properties via `props`. Type in a subreddit and get the top `n` results.
+The purpose of this lab is to build a todo-app using React, and to implement front-end routing.
 
 ## Tech/frameworks/packages
 
 - node 
 - npm
 - node packages
-  - eslint 
-  - faker
   - babel-core
   - babel-loader
   - babel-plugin-transform-object-rest-spread
-  - babel-preset-es2015
+  - babel-preset-env
   - babel-preset-react
   - css-loader
   - extract-text-webpack-plugin
@@ -23,13 +21,18 @@ The purpose of this lab is to get more familiar with react, and to practice pass
   - node-sass
   - react
   - react-dom
+  - react-router-dom
   - resolve-url-loader
   - sass-loader
-  - style-loader
+  - superagent
   - webpack
   - webpack-dev-server
-  - faker
-  - cowsay
+  - enzyme
+  - enzyme-adapter-react-16
+  - eslint
+  - eslint-plugin-react
+  - jest
+  - uuid
 
 ## How to use?
 

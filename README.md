@@ -10,14 +10,14 @@
   * Submit a question, observation, and how long you spent on canvas  
 
 ## Configuration    
-* **README.md** -- with a documention about your lab
+* **README.md** -- with a documentation about your lab
 * **.babelrc** -- with all dependencies and dev-dependencies 
 * **.eslintrc.json** -- with the class .eslintrc.json file
 * **.gitignore** -- with a robust gitignore
 * **.eslintignore** -- with the class .eslintignore
 * **package.json** -- with all dependencies and dev-dependencies 
 * **webpack.config.js** -- with webpack config
-* **src/** -- containing the front end code
+* **src/** -- containing the frontend code
 * **src/\_\_test\_\_** -- containing the frontend tests
 * **src/component** -- containing react components
 * **src/main.js** -- containing the entire app component

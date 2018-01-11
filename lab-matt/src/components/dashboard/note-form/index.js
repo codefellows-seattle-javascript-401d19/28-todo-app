@@ -11,29 +11,22 @@ class NoteForm extends React.Component {
       content: '',
     };
 
-    let memberFunctions = Object.getOwnPropertyNames(NoteForm.prototype);
-    for (let functionName of memberFunctions) {
-      if (functionName.startsWith('handle')) {
-        this[functionName] = this[functionName].bind(this);
-      }
-    }
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    
     this.props.addNote(this.state);
-    
     this.setState({
       title: '',
       content: '',
     });
-    console.log('submit');
   }
 
   handleChange(event) {
     let { name, value } = event.target;
-
     this.setState({ [name] : value });
   }
 

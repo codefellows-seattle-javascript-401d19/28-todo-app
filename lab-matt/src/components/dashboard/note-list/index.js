@@ -1,26 +1,31 @@
 import React from 'react';
+import NoteItem from '../note-item/';
 
 class NoteList extends React.Component {
   constructor(props) {
     super(props);
 
-    this.buildNotes = this.buildNotes.bind(this);
+    this.state = { 
+      notes: this.props.notes,
+    };
+
+    this.handleDelete = this.handleDelete.bind(this);  
   }
 
-  buildNotes() {
-    return this.props.notes.map((note, index) => {
-      return (
-        <li key={index}>Title: {note.title} Content: {note.content}</li>
-      );
-    });
+  handleDelete(event) {
+    let id = event.target.className;
+    this.props.deleteNote(id);
   }
 
   render() {
-    return(
-      <ul>
-        {this.buildNotes()}
-      </ul>
-    );
+    return this.props.notes.map((note, index) => {
+      return (
+        <ul key={index}>
+          <NoteItem note={note} />
+          <button className={note.id} onClick={this.handleDelete}>Delete</button>
+        </ul>
+      );
+    });
   }
 }
 

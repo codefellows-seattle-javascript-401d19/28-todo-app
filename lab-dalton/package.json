@@ -1,0 +1,11 @@
+{
+  "name": "lab-dalton",
+  "version": "1.0.0",
+  "description": "Lab 28 Todo",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dalton Carr",
+  "license": "MIT"
+}

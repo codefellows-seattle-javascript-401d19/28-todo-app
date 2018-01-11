@@ -34,12 +34,24 @@ class Dashboard extends React.Component {
       return { notes: previousState.notes.filter(item => item.id !== note.id) };
     });
   }
+
+  handleUpdateNote(noteToUpdate) {
+    this.setState(previousState => {
+      let updatedNotes = previousState.notes.map(note => (note.id === noteToUpdate.id ? noteToUpdate : note));
+      return { notes: updatedNotes };
+    });
+  }
+
   render() {
     return (
       <div className="dashboard">
         <p>This is the dashboard</p>
-        <NoteForm handleAddNote={this.handleAddNote} />
-        <NoteList notes={this.state.notes} handleRemoveNote={this.handleRemoveNote} />
+        <NoteForm handleComplete={this.handleAddNote} />
+        <NoteList
+          notes={this.state.notes}
+          handleRemoveNote={this.handleRemoveNote}
+          handleUpdateNote={this.handleUpdateNote}
+        />
       </div>
     );
   }

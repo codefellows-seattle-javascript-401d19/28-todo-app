@@ -1,23 +1,27 @@
 import React from 'react';
-import uuid from 'uuid/v1';
 
 class NoteItem extends React.Component {
   constructor(props){
     super(props);
 
-    this.createNote = this.createNote.bind(this);
+    this.removeNote = this.removeNote.bind(this);
   }
 
-  createNote() {
-    <div>Groot</div>;
+  removeNote(event) {
+    console.log(event.target.id);
+    //filter out the element that has a matching id and return all the others as a new array
   }
 
   render() {
     return(
-      <li>
-        {this.createNote}
-        <button>Remove Note</button>
-      </li>
+      <div>
+        <p>title: {this.props.notes[this.props.index].title}</p>
+        <p>note: {this.props.notes[this.props.index].content}</p>
+        <p>id: {this.props.notes[this.props.index].id}</p>
+        <p>editing: {this.props.notes[this.props.index].editing}</p>
+        <p>completed: {this.props.notes[this.props.index].completed}</p>
+        <button onClick={this.removeNote}>Remove Note</button>
+      </div>
     );
   }
 }

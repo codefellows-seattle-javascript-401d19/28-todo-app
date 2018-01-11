@@ -9,19 +9,23 @@ class NoteList extends React.Component {
   }
 
   createList() {
-    console.log(this.props);
-    // this.state.notes.map((note, index) => {
-    //   return <li key={index}>note</li>;
-    // });
+    return this.props.notes.map((note, index) => {
+      return (
+        <li key={index}>
+          <NoteItem notes={this.props.notes} index={index}/>
+        </li>
+      );
+    });
   }
 
   render() {
     return (
       <ul>
-        <NoteItem />
+        {this.createList()}
       </ul>
     );
   }
 }
+
 
 export default NoteList;

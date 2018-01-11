@@ -14,7 +14,7 @@ class Dashboard extends React.Component{
     this.removeNote = this.removeNote.bind(this);
   }
 
-  addNote(title, content, id = uuid(), editing = false, completed = false) {
+  addNote(title, content, id = uuid(), editing = 'false', completed = 'false') {
     let note = {
       title,
       content,
@@ -31,13 +31,12 @@ class Dashboard extends React.Component{
   removeNote(note) {}
 
   render() {
-    console.log(this.state.notes);
     return (
       <div>
         <h2>Add A Note</h2>
         <NoteForm addNote={this.addNote}/>
         <h2>Existing Notes</h2>
-        <NoteList removeNote={this.removeNote}/>
+        <NoteList removeNote={this.removeNote} notes={this.state.notes}/>
       </div>
     );
   }

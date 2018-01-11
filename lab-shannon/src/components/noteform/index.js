@@ -4,6 +4,11 @@ class NoteForm extends React.Component {
   constructor(props){
     super(props);
 
+    this.state = {
+      content : '',
+      title : '',
+    };
+
     this.onComplete = this.onComplete.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
@@ -25,13 +30,15 @@ class NoteForm extends React.Component {
     return (
       <form>
         <input
+          value={this.state.title}
           type="text"
           name="title"
           placeholder="title"
           onChange={this.handleChange}
         />
         <br />
-        <textarea
+        <input
+          value={this.state.content}
           type="text"
           name="content"
           placeholder="note"

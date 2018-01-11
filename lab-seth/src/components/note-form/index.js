@@ -7,7 +7,6 @@ class NoteForm extends React.Component {
     super(props);
 
     this.state = {
-      id: uuidv1(),
       title: '',
       content: '',
       editing: true,
@@ -32,6 +31,7 @@ class NoteForm extends React.Component {
     event.preventDefault();
 
     this.props.onComplete({
+      id: uuidv1(),
       title : event.target.title.value,
       content : event.target.content.value,
       editing : false,

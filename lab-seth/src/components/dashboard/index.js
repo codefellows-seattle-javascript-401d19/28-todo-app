@@ -41,7 +41,7 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div className='dashboard'>
-        <h1>Dashboard</h1>
+        <h2>Dashboard</h2>
         <p> Add a note with the form!</p>
         <NoteForm onComplete={this.handleAddNote} />
         <h2>Notes: {this.state.notes.length}</h2>

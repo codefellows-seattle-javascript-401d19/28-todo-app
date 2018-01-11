@@ -1,5 +1,6 @@
 import React from 'react';
 import NoteForm from '../note-form';
+import NoteList from '../note-list';
 const uuidv1 = require('uuid/v1');
 
 class Dashboard extends React.Component {
@@ -38,6 +39,7 @@ class Dashboard extends React.Component {
       <div className="dashboard">
         <p>This is the dashboard</p>
         <NoteForm handleAddNote={this.handleAddNote} />
+        <NoteList notes={this.state.notes} handleRemoveNote={this.handleRemoveNote} />
       </div>
     );
   }

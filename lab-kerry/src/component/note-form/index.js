@@ -31,7 +31,7 @@ class NoteForm extends React.Component {
     this.props.handleComplete(this.state);
     this.setState({
       title: '',
-	  content: '',
+      content: '',
     });
   }
 
@@ -51,7 +51,7 @@ class NoteForm extends React.Component {
 
   render() {
     return (
-      <form className='expense-form' onSubmit={this.handleSubmit}>
+      <form className='note-form' onSubmit={this.handleSubmit}>
         <input
           type='text'
           name='title'

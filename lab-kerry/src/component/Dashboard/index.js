@@ -33,6 +33,7 @@ class Dashboard extends React.Component {
     this.setState(previousState => {
       return { notes: [...previousState.notes, note] };
     });
+
   }
 
   handleRemoveNote(note) {

@@ -1,76 +1,57 @@
-401 JS --  Lab 28 Todo
-===
+# Code Fellows: Seattle 401 JavaScript - 401d19
 
-## Submission Instructions
-  * Work in a fork of this repository
-  * Work in a branch on your fork
-  * Write all of your code in a directory named `lab-` + `<your name>` **e.g.** `lab-duncan`
-  * Submit a pull request to this repository
-  * Submit a link to your pull request on canvas
-  * Submit a question, observation, and how long you spent on canvas  
+## Lab 28: TODO List
 
-## Configuration    
-* **README.md** -- with documentation about your lab
-* **.babelrc** -- with all dependencies and dev-dependencies 
-* **.eslintrc.json** -- with the class .eslintrc.json file
-* **.gitignore** -- with a robust gitignore
-* **.eslintignore** -- with the class .eslintignore
-* **package.json** -- with all dependencies and dev-dependencies 
-* **webpack.config.js** -- with webpack config
-* **src/** -- containing the frontend code
-* **src/\_\_test\_\_** -- containing the frontend tests
-* **src/component** -- containing react components
-* **src/main.js** -- containing the entire app component
-* **src/style** -- containing your sass
-* **src/style/main.scss** -- for importing and including reset and base
+### Author: 
+Dalton Carr
 
- 
-## Feature Tasks 
-create the following components and structure them according to the following diagram.  
-``` 
-App
-  Landing
-  Dashboard
-    NoteForm
-    NoteList
-      Noteitem
-```
-#### App
-* The app component should manage the frontend routes and have a navbar
-* the `/` route should display the `Landing` component
-* the `/dashboard` route should display the `Dashboard` component
+### Overview
 
-#### Landing
-* The landing component should display a brief description of the to do app
+This application is a simple TODO manager. You can add a task with a title and description then delete it when it's done. 
 
-#### Dashboard Component 
-* The dashboard component should manage the entire **application state**. 
-* The state should contain a notes array
-* It should have a bound `addNote(note)` method that adds a note to `state.notes`
-  * each note that is added should have the following data
-    * `id`: always should contain the result of `uuid.v1()`
-    * `editing`: false by default
-    * `completed`: false by default
-    * `content`: user provided content
-    * `title`: user provided title
-* It should have a bound `removeNote(note)` method that removes a note from `state.notes` based on its `id`
 
-#### NoteForm Component
-* `onComplete` the NoteForm should add a note to the application state
+### Code Style
 
-#### NoteList Component 
-* should display an unordered list of NoteItem components
+Standard JavaScript with ES6, REACT SASS, CSS, HTML
 
-#### NoteItem
-* should display the notes content and title
-* should display a delete button
-  * `onClick` the note should be removed from the application state
+### Tech/Framework Used
 
-## Test
-* Test Dashboard
-  * Test the initial state
-* Test NoteForm
-  * Test the initial state
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.8",
+    "eslint-plugin-react": "^7.5.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^2.30.1",
+    "node-sass": "^4.7.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
+    "resolve-url-loader": "^2.2.1",
+    "sass-loader": "^6.0.6",
+    "superagent": "^3.8.2",
+    "uuid": "^3.1.0",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.10.1"
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest": "^22.0.5"
 
-##  Documentation  
-Write a description of the project in your README.md
+
+### How to use?
+
+* Step 1. Fork and Clone the Repository.
+* Step 2. `npm install`
+* Step 3. `npm run watch`
+* Step 4. You should now be able to visit: `http://localhost:8080/` to view the application
+* Step 5. Make some TODO's! 
+
+### Credits
+
+* Code Fellows
+
+### License
+
+MIT © Dalton Carr

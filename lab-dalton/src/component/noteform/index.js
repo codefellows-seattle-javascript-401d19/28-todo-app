@@ -6,7 +6,7 @@ class NoteForm extends React.Component {
 
     this.state = {
       title: '',
-      descri: '',
+      content: '',
     };
 
     let memberFunctions = Object.getOwnPropertyNames(NoteForm.prototype);

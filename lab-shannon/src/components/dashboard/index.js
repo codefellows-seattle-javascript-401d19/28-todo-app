@@ -27,7 +27,7 @@ class Dashboard extends React.Component{
         <h2>Add A Note</h2>
         <NoteForm addNote={this.addNote}/>
         <h2>Existing Notes</h2>
-        <NoteList />
+        <NoteList removeNOte={this.removeNote}/>
       </div>
     );
   }

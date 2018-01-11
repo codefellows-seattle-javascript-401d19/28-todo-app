@@ -5,15 +5,40 @@ class NoteForm extends React.Component {
     super(props);
 
     this.onComplete = this.onComplete.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  onComplete() {
-    
+  handleChange(event) {
+    let {name, value} = event.target;
+
+    this.setState({
+      [name]: value,
+    });
+  }
+
+  onComplete(event) {
+    event.preventDefault();
+    this.setState(this.props.addNote(this.state));
   }
 
   render() {
     return (
-      'blahasjdfhjsdfhljshaskj'
+      <form>
+        <input
+          type="text"
+          name="title"
+          placeholder="title"
+          onChange={this.handleChange}
+        />
+        <br />
+        <textarea
+          type="text"
+          name="content"
+          placeholder="note"
+          onChange={this.handleChange}
+        />
+        <button onClick={this.onComplete}>Add Note</button>
+      </form>
     );
   }
 }

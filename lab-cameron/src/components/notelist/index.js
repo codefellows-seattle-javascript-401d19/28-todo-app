@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NoteItem from '../noteitem';
 
 const NoteList = ({ notes, onRemove }) => {
   const handleRemove = key => {
@@ -8,11 +9,14 @@ const NoteList = ({ notes, onRemove }) => {
   return (
     <div>
       <ul>
-        {notes.map((note, index) => {
-          return <li key={index}>
-            <p>Title: {note.title}</p>
-            <p>Content: {note.content}</p>
-            <button onClick={() => handleRemove(note.id)} type='button'>Delete</button>
+        {notes.map((note) => {
+          return <li key={note.id}>
+            <NoteItem
+              title={note.title}
+              content={note.content}
+              onRemove={handleRemove}
+              id={note.id}
+            />
           </li>;
         })}
       </ul>

@@ -5,6 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "build": "webpack",
+    "test": "jest -i --coverage",
     "watch": "webpack-dev-server --inline --hot"
   },
   "keywords": [],

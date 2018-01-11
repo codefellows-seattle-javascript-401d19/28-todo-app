@@ -10,6 +10,9 @@ describe('Note Form tests...', () => {
   test('Simple initial state test for proper setup', () => {
     let mockNoteForm = Enzyme.mount(<NoteForm />);
 
-    expect(mockNoteForm.state('notes')).toEqual([]);
+    expect(mockNoteForm.state('title')).toEqual('');
+    expect(mockNoteForm.state('content')).toEqual('');
+    expect(mockNoteForm.state('editing')).toEqual(true);
+    expect(mockNoteForm.state('completed')).toEqual(false);
   });
 });

@@ -10,7 +10,7 @@ describe('NoteForm', () => {
   test('test for initial state', () => {
     let mountedNoteForm = Enzyme.mount(<NoteForm/>);
 
-    expect(mountedNoteForm.state('notes')).toEqual([]);
+    expect(mountedNoteForm.state('title')).toEqual('');
   });
 });
 

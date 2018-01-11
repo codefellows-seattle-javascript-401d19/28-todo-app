@@ -16,6 +16,16 @@ class NoteForm extends React.Component {
   //------------------------------------------
   // Member Functions
   //------------------------------------------
+  handleSubmit(event){
+    event.preventDefault();
+
+    this.props.handleAddExpense(this.state);
+    this.setState({
+      title : '',
+      content : ''
+    });
+  }
+  
   handleChange(event){
     let {name,value} = event.target;
 
@@ -29,7 +39,7 @@ class NoteForm extends React.Component {
   //------------------------------------------
   render() {
     return(
-      <form className='note-form' onComplete={this.addNote}>
+      <form className='note-form' onComplete={this.addNote} onSubmit={this.handleSubmit}>
         <input 
           type='text'
           name='title'

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Landing = () => {
   return (
-    <div>This is a description</div>
+    <div><p>A simple todo app built in React.js</p></div>
   );
 };
 

@@ -28,11 +28,6 @@ class NoteForm extends Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    this.setState({
-      editing: false,
-      complete: true,
-    });
-
     const { id, title, content, editing, complete } = this.state;
 
     const note = { id, title, content, editing, complete };
@@ -58,6 +53,7 @@ class NoteForm extends Component {
             value={this.state.title}
             onChange={this.handleChange}
           />
+          <br />
           <input
             type='text'
             name='content'
@@ -65,6 +61,7 @@ class NoteForm extends Component {
             value={this.state.content}
             onChange={this.handleChange}
           />
+          <br />
           <button type='submit'>Publish Note</button>
         </form>
       </div>

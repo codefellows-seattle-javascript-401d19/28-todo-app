@@ -1,13 +1,15 @@
 import React from 'react';
 
+const emptyState = {
+  title: '',
+  content: '',
+};
+
 class NoteForm extends React.Component {
   constructor(props){
     super(props);
 
-    this.state = {
-      title: '',
-      content: '',
-    };
+    this.state = this.props.note ? this.props.note : emptyState;
 
     this.handleChange = this.handleChange.bind(this);
     this.addNote = this.addNote.bind(this);
@@ -27,7 +29,13 @@ class NoteForm extends React.Component {
     this.setState({title: '', content: ''});
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.note)
+      this.setState(nextProps.note);
+  }
+
   render(){
+    let buttonText = this.props.note ? 'Update Note!' : 'Add Note!';
     return (
       <form onSubmit={this.addNote}>
         <input
@@ -46,7 +54,7 @@ class NoteForm extends React.Component {
         />
         <input
           type='submit'
-          value='Add Note!'
+          value={buttonText}
         />
       </form>
     );

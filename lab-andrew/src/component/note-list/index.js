@@ -11,7 +11,7 @@ class NoteList extends React.Component {
             <NoteItem
               key={index}
               note={note}
-              removeButton={this.props.removeNote}
+              deleteNote={this.props.deleteNote}
             />
           )
         }

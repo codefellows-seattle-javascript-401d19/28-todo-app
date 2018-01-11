@@ -13,6 +13,7 @@ class Dashboard extends React.Component {
     };
 
     this.addNote = this.addNote.bind(this);
+    this.updateNote = this.updateNote.bind(this);
     this.deleteNote = this.deleteNote.bind(this);
   }
 
@@ -20,6 +21,16 @@ class Dashboard extends React.Component {
     let note = {title, content, editing, completed, id: uuid.v1()};
     this.setState(previousState => {
       return {notes: [...previousState.notes, note]};
+    });
+  }
+
+  updateNote(noteToUpdate) {
+    this.setState(previousState => {
+      let updatedNote = previousState.notes.map(
+        note => note.id === noteToUpdate.id ?
+          noteToUpdate : note);
+
+      return {notes: updatedNote};
     });
   }
 
@@ -37,7 +48,11 @@ class Dashboard extends React.Component {
       <main>
         <h2>Dashboard</h2>
         <NoteForm newNote={this.addNote}/>
-        <NoteList removeNote={this.deleteNote} listOfNotes={this.state.notes}/>
+        <NoteList
+          updateNote={this.updateNote}
+          deleteNote={this.deleteNote}
+          listOfNotes={this.state.notes}
+        />
       </main>
     );
   }

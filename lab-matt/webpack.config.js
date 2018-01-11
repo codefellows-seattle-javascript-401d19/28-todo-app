@@ -2,17 +2,12 @@
 
 const HTMLPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const htmlWebpackPluginConfig = new HTMLPlugin({
-  template: './src/index.html',
-  filename: 'index.html',
-  inject: 'body',
-});
 
 const webPackConfig = module.exports = {};
 
 // -----------------------------------------------
 
-webPackConfig.entry = `./src/index.js`; 
+webPackConfig.entry = `${__dirname}/src/main.js`; 
 
 // -----------------------------------------------
 
@@ -24,7 +19,7 @@ webPackConfig.output = {
 // -----------------------------------------------
 
 webPackConfig.plugins = [
-  htmlWebpackPluginConfig,
+  new HTMLPlugin(),
   new ExtractTextPlugin('bundle.[hash].css'), 
 ]; 
 

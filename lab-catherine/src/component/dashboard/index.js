@@ -2,6 +2,7 @@ import React from 'react';
 import uuidv1 from 'uuid/v1';
 import NoteForm from '../noteform';
 import NoteList from '../notelist';
+import NoteItem from '../noteitem';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -29,9 +30,17 @@ class Dashboard extends React.Component {
     });
   }
 
-  handleRemoveNote(note) {
+  handleRemoveNote(noteToDelete) {
     this.setState(previousState => {
-      return {notes: previousState.notes.filter(noteToDelete => noteToDelete.id !== note.id)};
+      return {notes: previousState.notes.filter(note => note.id !== noteToDelete.id)};
+    });
+  }
+
+  handleUpdateNote(noteToUpdate) {
+    this.setState(previousState => {
+      let updatedNotes = previousState.notes.map(note => note.id === noteToUpdate.id ? noteToUpdate : note);
+
+      return {notes : updatedNotes};
     });
   }
 
@@ -39,8 +48,8 @@ class Dashboard extends React.Component {
     return (
       <div className='dashboard'>
         <h2>Create your own Todo List:</h2>
-        <NoteForm handleAddNote={this.handleAddNote}/>
-        <NoteList notes={this.state.notes} handleRemoveNote={this.handleRemoveNote}/>
+        <NoteForm handleComplete={this.handleAddNote}/>
+        <NoteList notes={this.state.notes} handleRemoveNote={this.handleRemoveNote} handleUpdateNote={this.handleUpdateNote}/>
       </div>
     );
   }

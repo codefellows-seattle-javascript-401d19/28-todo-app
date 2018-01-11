@@ -42,6 +42,9 @@ class NoteForm extends React.Component {
   //------------------------------------------
   // Hooks
   //------------------------------------------
+
+// TODO: Add componentWillReceiveProps Hook
+
   render() {
     let buttonText = this.props.note ? 'Update' : 'Create';
     return(

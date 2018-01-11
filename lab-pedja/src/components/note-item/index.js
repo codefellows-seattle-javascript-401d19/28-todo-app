@@ -1,7 +1,7 @@
 import React from "react";
 
 import NoteForm from "../note-form";
-// import Modal from "../modal";
+import Modal from "../modal";
 
 class NoteItem extends React.Component {
   constructor(props) {

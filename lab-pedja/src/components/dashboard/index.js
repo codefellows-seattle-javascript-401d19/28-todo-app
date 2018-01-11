@@ -39,6 +39,8 @@ class Dashboard extends React.Component {
     this.setState({ notes });
   }
 
+  // TODO: handleUpdateNote
+
   //------------------------------------------------------------
   // Hooks
   //------------------------------------------------------------
@@ -50,6 +52,7 @@ class Dashboard extends React.Component {
       <NoteList 
         notes={this.state.notes}
         handleRemoveNote={this.handleRemoveNote}
+        // TODO: handleUpdateNote
       />      
      </div>
     )

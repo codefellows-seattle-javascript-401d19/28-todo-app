@@ -7,7 +7,7 @@ class Dashboard extends React.Component {
     super(props);
 
     this.state = {
-      notes :[],
+      notes : [],
     };
 
 
@@ -27,16 +27,12 @@ class Dashboard extends React.Component {
 
   handleAddNote(note) {
   
-    this.setState(previousState => {
-      return {notes: [...previousState.notes, note]};
-    });
+    this.setState(previousState => ({notes: [...previousState.notes, note]}));
   }
 
-  handleRemoveNote(note) {
+  handleRemoveNote(id) {
   
-    this.setState(previousState => {
-      return {notes: [...previousState.notes, note]}; //How do we remove?
-    });
+    this.setState(previousState => ({notes: previousState.notes.filter(note => note.id !== id)}));
   }
 
   //=======================================================
@@ -46,9 +42,10 @@ class Dashboard extends React.Component {
     return (
       <div className='dashboard'>
         <h1>Dashboard</h1>
-        <NoteForm handleAddNote={this.handleAddNote} handleRemoveNote={this.handleRemoveNote} />
+        <p> Add a note with the form!</p>
+        <NoteForm onComplete={this.handleAddNote} />
         <h2>Notes: {this.state.notes.length}</h2>
-        <NoteList />
+        <NoteList notes={this.state.notes} removeNote={this.handleRemoveNote} />
       </div>
     );
   }

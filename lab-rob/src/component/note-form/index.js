@@ -1,6 +1,7 @@
 import React from 'react';
-import autoBind from '../../lib/auto-bind';
 import uuid from 'uuid';
+
+import autoBind from '../../lib/auto-bind';
 
 class NoteForm extends React.Component {
   constructor(props) {
@@ -13,6 +14,10 @@ class NoteForm extends React.Component {
 
     autoBind(this, NoteForm);
   }
+
+  // -----------------------------
+  // Member's Only
+  // -----------------------------
 
   handleChange(event) {
     let {name, value} = event.target;
@@ -39,13 +44,19 @@ class NoteForm extends React.Component {
     });
   }
 
+  // -----------------------------
+  // Captain Hooks
+  // -----------------------------
+
   render() {
     return (
-      <form className='noteForm' onSubmit={this.handleSubmit}>
-        <input name='title' value={this.state.title} placeholder='Title' onChange={this.handleChange} />
-        <textarea cols='20' rows='20' name='content' placeholder='Note Content' value={this.state.content} onChange={this.handleChange} />
-        <button type='submit'>Submit Note</button>
-      </form>
+      <div className='note-form'>
+        <form onSubmit={this.handleSubmit}>
+          <input name='title' value={this.state.title} placeholder='Title' onChange={this.handleChange} />
+          <textarea cols='20' rows='20' name='content' placeholder='Note Content' value={this.state.content} onChange={this.handleChange} />
+          <button type='submit'>Submit Note</button>
+        </form>
+      </div>
     );  
   }
 }

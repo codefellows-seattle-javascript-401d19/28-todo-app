@@ -19,8 +19,8 @@ class NoteItem extends React.Component {
           <p>Title: {note.title}</p>
           <p> Content: {note.content}</p>
         </li>
-        <button className='delete-button' type="click" onClick={handleRemoveNote.bind(null, note)}>Delete</button>
         <button onClick={showModal}>Edit</button>
+        <button className='delete-button' type="click" onClick={handleRemoveNote.bind(null, note)}>Delete</button>
         <Modal handleClose={hideModal} show={note.editing}>
           <h1>Editing {note.title}</h1>
           <NoteForm handleComplete={updateAndClose} note={note}/>

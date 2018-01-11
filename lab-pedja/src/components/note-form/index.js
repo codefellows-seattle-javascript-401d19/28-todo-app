@@ -3,9 +3,12 @@ import React from "react";
 class NoteForm extends React.Component {
   constructor(props) {
     super(props);
-    //------------------------------------------
-    // Binding Handlers
-    //------------------------------------------
+
+    this.state = {
+      title: '',
+      content: ''
+    }
+
     let memberFunctions = Object.getOwnPropertyNames(NoteForm.prototype);
     for(let functionName of memberFunctions) {
       if(functionName.startsWith('handle')) {
@@ -19,7 +22,7 @@ class NoteForm extends React.Component {
   handleSubmit(event){
     event.preventDefault();
 
-    this.props.handleAddExpense(this.state);
+    this.props.handleAddNote(this.state);
     this.setState({
       title : '',
       content : ''
@@ -39,7 +42,7 @@ class NoteForm extends React.Component {
   //------------------------------------------
   render() {
     return(
-      <form className='note-form' onComplete={this.addNote} onSubmit={this.handleSubmit}>
+      <form className='note-form' onSubmit={this.handleSubmit}>
         <input 
           type='text'
           name='title'
@@ -47,8 +50,10 @@ class NoteForm extends React.Component {
           value={this.state.title}
           onChange={this.handleChange}
           />
-        <input
+        <textarea
           type='type'
+          cols='30'
+          rows='5'
           name='content'
           placeholder='content'
           value={this.state.content}

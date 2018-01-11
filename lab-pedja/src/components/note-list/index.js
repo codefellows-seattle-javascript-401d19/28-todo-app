@@ -1,35 +1,19 @@
-import React from 'react'
+import React from 'react';
+import NoteItem from "../note-item";
 
-class NodeList extends React.Component {
-  constructor(props){
-    super(props)
-
-    this.NodeList = this.NodeList.bind(this);
-  }
-
-  NodeList() {
-    return this.props.items.map((item, index)=> {
-      return (
-        <ul key={index}>
-          <li>
-            <h1>
-              {item.title}
-              <p>{item.content}</p>
-            </h1>
-          </li>
-        </ul>
-      )
-    });
-  }
-
+class NoteList extends React.Component {
   render() {
     return (
       <div>
-        <h1>List of Itesm</h1>
-        {this.NodeList()}
+        <h3>All your TODOs</h3>
+        <ul>
+          {this.props.notes.map((note, index) => (
+            <NoteItem key={index} note={note} handleRemoveNote={this.props.handleRemoveNote} />
+          ))}
+        </ul>
       </div>
-    )
+    );
   }
 }
 
-export default NodeList;
+export default NoteList;

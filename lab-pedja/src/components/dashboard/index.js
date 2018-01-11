@@ -1,6 +1,8 @@
 import React from "react";
-import NoteForm from "../note-form";
 import uuid from 'uuid';
+
+import NoteForm from "../note-form";
+import NoteList from "../note-list";
 
 
 class Dashboard extends React.Component {
@@ -9,8 +11,6 @@ class Dashboard extends React.Component {
 
     this.state = {
       notes: [],
-      editing: false,
-      completed: false,
     }
 
     let memberFunctions = Object.getOwnPropertyNames(Dashboard.prototype);
@@ -25,32 +25,35 @@ class Dashboard extends React.Component {
   //Member Functions
   //------------------------------------------------------------
 
-  // ADD NOTE
+  handleAddNote(note) {
+    note.id = uuid.v1();
+    note.editing = false;
+    note.completed = false;
+    this.setState(previousState => {
+      return {notes: [...previousState.notes, note]};
+    });
+  }
 
+  handleRemoveNote(note) {
+    const notes = this.state.notes.filter(noteToFilter => noteToFilter.id !== note.id);
+    this.setState({ notes });
+  }
+
+  //------------------------------------------------------------
   // Hooks
+  //------------------------------------------------------------
   render() {
     return (
       <div className='dashboard'>
-      <h1>I am a Dashboard!</h1>
-      <NoteForm handleAddExpense={this.handleAddExpense} />
-      <ul>
-        {
-          this.state.expenses.map((expense,index) => 
-            <li key={index}>{expense.title}:${expense.price}</li>)
-        }
-      </ul>
+      <h2>Dashboard - TODO list</h2>
+      <NoteForm handleAddNote={this.handleAddNote} />
+      <NoteList 
+        notes={this.state.notes}
+        handleRemoveNote={this.handleRemoveNote}
+      />      
      </div>
     )
   }
 }
 
-// The dashboard component should manage the entire application state.
-// The state should contain a notes array
-// It should have a bound addNote(note) method that adds a note to state.notes
-// each note that is added should have the following data
-// id: always should contain the result of uuid.v1()
-// editing: false by default
-// completed: false by default
-// content: user provided content
-// title: user provided title
-// It should have a bound removeNote(note) method that removes a note from state.notes based on its id
+export default Dashboard;

@@ -3,31 +3,17 @@ import React from "react";
 class NoteItem extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      title: '',
-      content: ''
-    }
   }
 
   render() {
     return (
-      <form className='note-item'>
-        <input 
-          type='text'
-          name='title'
-          placeholder='title'
-          value={this.state.title}
-          />
-        <input
-          type='number'
-          name='price'
-          placeholder='price'
-          step='any'
-          value={this.state.price}
-        />
-        <button type='submit' onClick={this.removeNote}> remove note </button>
-      </form>
+      <div>
+        <li className='note-item'> 
+          <p>Title: {this.props.note.title}</p>
+          <p>Content: {this.props.note.content}</p>
+        </li>
+        <button type='click' onClick={() => {this.props.handleRemoveNote(this.props.note);}}> remove note </button>
+      </div>
     )
   }
 }

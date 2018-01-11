@@ -1,5 +1,7 @@
 import React from 'react';
 import NoteForm from '../note-form';
+import NoteList from '../note-list';
+import NoteItem from '../note-item';
 import uuid from 'uuid';
 
 class Dashboard extends React.Component {
@@ -25,9 +27,18 @@ class Dashboard extends React.Component {
   handleAddNote(note) {
     note.createdOn = new Date();
     note.id = uuid.v1();
+    note.editing = false;
+    note.completed = false;
 
     this.setState(previousState => {
       return { notes: [...previousState.notes, note] };
+    });
+  }
+
+  handleRemoveNote(note) {
+    this.setState(previousState => {
+	
+      return { notes: previousState.notes.filter(item => item.id !== note.id)};
     });
   }
   //...............................................................
@@ -38,12 +49,11 @@ class Dashboard extends React.Component {
       <div className='dashboard'>
         <h1>Dashboard!</h1>
         <NoteForm handleComplete={this.handleAddNote} />
-        <ul>
-          {
-            this.state.notes.map((note, index) =>
-              <li key={index}>{note.title}:${note.content}</li>)
-          }
-        </ul>
+		
+        <NoteList 
+          allNotes={this.state.notes} 
+          handleRemoveNote={this.handleRemoveNote}/>
+
       </div>
     );
   }

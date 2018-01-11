@@ -31,7 +31,7 @@ class NoteForm extends React.Component {
     this.props.handleComplete(this.state);
     this.setState({
       title: '',
-      price: 0,
+	  content: '',
     });
   }
 
@@ -59,13 +59,17 @@ class NoteForm extends React.Component {
           value={this.state.title}
           onChange={this.handleChange}
         />
-        <input
+        <br/>
+        <textarea
           type='text'
+          cols='60'
+          rows='10'
           name='content'
           placeholder='content'
           value={this.state.content}
           onChange={this.handleChange}
         />
+        <br/>
         <button type='submit'>Create New Note</button>
       </form>
     );

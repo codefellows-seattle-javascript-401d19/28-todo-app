@@ -8,7 +8,6 @@ class NoteForm extends React.Component{
 
     this.state = {
       createdOn : new Date(),
-      id : uuidv1(),
       title : '',
       content : '',
     };
@@ -33,6 +32,7 @@ class NoteForm extends React.Component{
     this.setState({
       title : '',
       content : '',
+      id : uuidv1(),
     });
   }
 

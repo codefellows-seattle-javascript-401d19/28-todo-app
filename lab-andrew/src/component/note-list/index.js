@@ -6,8 +6,15 @@ class NoteList extends React.Component {
   render() {
     return (
       <ul>
-
-        <NoteItem/>
+        {
+          this.props.listOfNotes.map((note, index) => 
+            <NoteItem
+              key={index}
+              note={note}
+              removeButton={this.props.removeNote}
+            />
+          )
+        }
       </ul>
     );
   }

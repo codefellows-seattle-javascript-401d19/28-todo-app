@@ -29,7 +29,6 @@ class Dashboard extends React.Component{
   }
 
   removeNote(noteToRemove) {
-    console.log(noteToRemove, `remove`);
     this.setState(previousState => {
       let remainingNotes = previousState.notes.filter(note => {
         if(note.id !== noteToRemove.id){

@@ -6,10 +6,11 @@ Enzyme.configure({ adapter: new Adapter() });
 
 import NoteForm from '../component/Dashboard';
 
-describe('Dashboard', () => {
+describe('Note-Form', () => {
   test('Test for initial state', () => {
     let mountedDashboard = Enzyme.mount(<NoteForm />);
 
-    expect(mountedDashboard.state('notes')).toEqual([]);
+    expect(mountedDashboard.state('title')).toBe(undefined);
+    expect(mountedDashboard.state('content')).toBe(undefined);
   });
 });

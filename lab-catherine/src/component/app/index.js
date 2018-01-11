@@ -1,5 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Route, Link} from 'react-router-dom';
+import Landing from '../landing';
 import Dashboard from '../dashboard';
 
 class App extends React.Component {
@@ -9,7 +10,7 @@ class App extends React.Component {
         <BrowserRouter>
           <div>
             <header>
-              <h1>Todo List Application!</h1>
+              <h1>Todo List Application</h1>
               <nav>
                 <ul>
                   <li><Link to='/'>Home</Link></li>
@@ -17,7 +18,7 @@ class App extends React.Component {
                 </ul>
               </nav>
             </header>
-            <Route exact path='/' component={() => <h1>Welcome to the Todo List App!</h1>}/>
+            <Route exact path='/' component={Landing}/>
             <Route exact path='/dashboard' component={Dashboard}/>     
           </div>
         </BrowserRouter>

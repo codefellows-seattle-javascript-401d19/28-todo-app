@@ -39,7 +39,7 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div className='dashboard'>
-        <h1>Dashboard Page!</h1>
+        <h1>Create Your Own Todo List:</h1>
         <NoteForm handleAddNote={this.handleAddNote}/>
         <ul>
           {

@@ -15,7 +15,7 @@ class NoteItem extends React.Component {
 
     return (
       <div>
-        <li className ='note-item'>
+        <li onDoubleClick={showModal} className ='note-item'>
           <p>Title: {note.title}</p>
           <p> Content: {note.content}</p>
         </li>

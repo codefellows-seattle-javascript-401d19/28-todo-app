@@ -1,5 +1,6 @@
 import React from 'react';
 import NoteForm from '../note-form';
+import NoteList from '../note-list';
 
 class NoteItem extends React.Component {
   constructor(props) {
@@ -27,3 +28,5 @@ class NoteItem extends React.Component {
     )
   }
 }
+
+export default NoteItem;

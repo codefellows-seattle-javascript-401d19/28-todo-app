@@ -37,7 +37,7 @@ class NoteForm extends React.Component {
 
   render() {
     return (
-      <form className = 'note-form' onSubmit={this.handleSubmit}>
+      <form className='note-form' onSubmit={this.handleSubmit}>
         <input
           type='text'
           name='title'
@@ -54,7 +54,7 @@ class NoteForm extends React.Component {
           value={this.state.content}
           onChange={this.handleChange}
         />
-        <button type='submit'>New Note</button>
+        <button type='submit'>Submit New Note</button>
       </form>
     );
   }

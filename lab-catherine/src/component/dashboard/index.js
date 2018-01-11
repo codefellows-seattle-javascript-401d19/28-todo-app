@@ -29,28 +29,16 @@ class Dashboard extends React.Component {
   }
 
   handleRemoveNote(note) {
-    let removedNoteState = this.state.notes.filter(note => {
-      return note.id !== note;
+    this.setState(previousState => {
+      return {notes: previousState.notes.filter(noteToDelete => noteToDelete.id !== note.id)};
     });
-
-    this.setState({notes: [...removedNoteState]});
   }
 
   render() {
     return (
       <div className='dashboard'>
-        <h1>Create Your Own Todo List:</h1>
-        <NoteForm handleAddNote={this.handleAddNote}/>
-        <ul>
-          {
-            this.state.notes.map((note, index) => 
-              <li key={index}>
-                <p>Title: {note.title}</p>
-                <p> Content: {note.content}</p>
-                <button onClick={() => this.handleRemoveNote(note.id)} type='button'>Delete</button></li>
-            )
-          }
-        </ul>
+        <h2>Create your own Todo List:</h2>
+        <NoteForm handleAddNote={this.handleAddNote} handleRemoveNote={this.handleRemoveNote}/>
       </div>
     );
   }

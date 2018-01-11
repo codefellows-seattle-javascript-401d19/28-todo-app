@@ -1,6 +1,7 @@
 import React from 'react';
 import NoteForm from '../noteform';
 import NoteList from '../notelist';
+import uuid from 'uuid/v1';
 
 class Dashboard extends React.Component{
   constructor(props){
@@ -13,7 +14,15 @@ class Dashboard extends React.Component{
     this.removeNote = this.removeNote.bind(this);
   }
 
-  addNote(note) {
+  addNote(title, content, id = uuid(), editing = false, completed = false) {
+    let note = {
+      title,
+      content,
+      id,
+      editing,
+      completed,
+    };
+
     this.setState(previousState => {
       return {notes: [...previousState.notes, note]};
     });
@@ -22,12 +31,13 @@ class Dashboard extends React.Component{
   removeNote(note) {}
 
   render() {
+    console.log(this.state.notes);
     return (
       <div>
         <h2>Add A Note</h2>
         <NoteForm addNote={this.addNote}/>
         <h2>Existing Notes</h2>
-        <NoteList removeNOte={this.removeNote}/>
+        <NoteList removeNote={this.removeNote}/>
       </div>
     );
   }

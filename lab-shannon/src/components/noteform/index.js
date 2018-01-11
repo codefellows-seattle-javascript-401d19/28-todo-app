@@ -18,7 +18,7 @@ class NoteForm extends React.Component {
 
   onComplete(event) {
     event.preventDefault();
-    this.setState(this.props.addNote(this.state));
+    this.setState(this.props.addNote(this.state.title, this.state.content));
   }
 
   render() {

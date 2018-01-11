@@ -5,25 +5,18 @@ class NoteItem extends React.Component {
   constructor(props){
     super(props);
 
-    this.state = {
-      id: uuid(),
-      editing: false,
-      completed: false,
-      content: '',
-      title: '',
-    };
-
     this.createNote = this.createNote.bind(this);
   }
 
   createNote() {
-    
+    <div>Groot</div>;
   }
 
   render() {
     return(
       <li>
         {this.createNote}
+        <button>Remove Note</button>
       </li>
     );
   }

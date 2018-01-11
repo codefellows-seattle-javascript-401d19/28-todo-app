@@ -1,6 +1,6 @@
 import React from 'react';
 
-class ExpenseForm extends React.Component {
+class NoteForm extends React.Component {
   constructor(props){
     super(props);
 
@@ -12,7 +12,7 @@ class ExpenseForm extends React.Component {
     //====================
     // Binding Handler from Vinicio
     //====================
-    let memberFunctions = Object.getOwnPropertyNames(ExpenseForm.prototype);
+    let memberFunctions = Object.getOwnPropertyNames(NoteForm.prototype);
     for(let functionName of memberFunctions){
       if(functionName.startsWith('handle')){
         this[functionName] = this[functionName].bind(this);
@@ -54,4 +54,4 @@ class ExpenseForm extends React.Component {
   }
 }
 
-export default ExpenseForm;
+export default NoteForm;

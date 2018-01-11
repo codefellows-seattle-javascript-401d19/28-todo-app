@@ -1,5 +1,5 @@
 import React from 'react';
-import ExpenseForm from '../expense-form';
+import NoteForm from '../note-form';
 import uuidv1 from 'uuid/v1';
 
 class Dashboard extends React.Component{
@@ -47,7 +47,7 @@ class Dashboard extends React.Component{
     return(
       <div className="dashboard">
         <h1> I am the Dashboard </h1>
-        <ExpenseForm handleComplete={this.handleAddNote} />
+        <NoteForm handleComplete={this.handleAddNote} />
         <ul>
           {
             this.state.notes.map((note, index) =>

@@ -10,7 +10,7 @@ class Landing extends React.Component {
         Once you have completed your task, you can delete it from your list.</p>
         <br></br>
 
-        <h2 className='github'>Dalton Carr</h2>
+        <h2 className='github'>By:Dalton Carr</h2>
       </div>
     );
   }

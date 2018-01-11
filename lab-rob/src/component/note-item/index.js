@@ -6,7 +6,7 @@ class NoteItem extends React.Component {
     return (
       <li className='note'>
         {note.title}: {note.content}
-        <button onClick={() => {this.props.removeNote(note.id);}}>Remove Note</button>
+        <button onClick={this.props.removeNote.bind(this, note.id)}>Remove Note</button>
       </li>
     );
   }

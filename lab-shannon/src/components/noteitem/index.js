@@ -8,8 +8,12 @@ class NoteItem extends React.Component {
   }
 
   removeNote(event) {
-    console.log(event.target.id);
-    //filter out the element that has a matching id and return all the others as a new array
+    const remainingNotes = this.props.notes.filter(note => {
+      if(note.id !== event.target.id){
+        return note;
+      }
+    });
+    this.setState(this.props.updateList(remainingNotes));
   }
 
   render() {
@@ -20,7 +24,7 @@ class NoteItem extends React.Component {
         <p>id: {this.props.notes[this.props.index].id}</p>
         <p>editing: {this.props.notes[this.props.index].editing}</p>
         <p>completed: {this.props.notes[this.props.index].completed}</p>
-        <button onClick={this.removeNote}>Remove Note</button>
+        <button id={this.props.notes[this.props.index].id} onClick={this.removeNote}>Remove Note</button>
       </div>
     );
   }

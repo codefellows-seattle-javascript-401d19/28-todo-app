@@ -28,7 +28,9 @@ class Dashboard extends React.Component{
     });
   }
 
-  removeNote(note) {}
+  removeNote(remainingNotes) {
+    this.setState({notes: remainingNotes});
+  }
 
   render() {
     return (

@@ -6,11 +6,16 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webPackConfig = module.exports = {};
 
 //-----------------------------------------
-webPackConfig.entry = `${__dirname}/src/main.js`
+webPackConfig.entry = `${__dirname}/src/main.js`;
 webPackConfig.output = {
   filename : 'bundle.[hash].js',
   path : `${__dirname}/build`,
 }
+//-----------------------------------------
+webPackConfig.plugins = [
+  new HTMLPlugin(),
+  new ExtractTextPlugin('bundle.[hash].css'),
+];
 //-----------------------------------------
 webPackConfig.module = {
   rules : [

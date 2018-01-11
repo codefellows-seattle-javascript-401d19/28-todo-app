@@ -1,39 +1,18 @@
 import React from 'react';
+import Dashboard from '../dashboard';
 
-class Landing extends React.Component {
-  constructor(props){
-    super(props);
-
-    this.state = {
-    }
-
-    //-----------------------------------------
-    // Binding Function
-    //-----------------------------------------
-    let memberFunctions = Object.getOwnPropertyNames(Landing.prototype);
-    for(let functionName of memberFunctions){
-      if(functionName.startsWith('handle')){
-        this[functionName] = this[functionName].bind(this);
-      }
-    }
-  }
-  //-----------------------------------------
-  // Member Functions
-  //-----------------------------------------
-
-  //-----------------------------------------
-  // Hooks
-  //-----------------------------------------
+class Landing extends React.Component{
+ 
   render(){
-
-  
-
     return(
       <div className='landing'>
-      <h1>This is the landing page. Todo stuff.</h1>
+            <header>
+              <h1>This is the landing page. Todo stuff.</h1>
+              <p> This app lets you save notes, and see your list of notes. Please note Notes will not persist when you leave the site though.
+              </p>
+            </header>
       </div>
     );
-
   }
 }
 

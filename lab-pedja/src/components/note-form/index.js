@@ -1,13 +1,15 @@
 import React from "react";
 
+let emptyState = {
+  title: '',
+  content: '',
+}
+
 class NoteForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      title: '',
-      content: ''
-    }
+    this.state = this.props.note ? this.props.note : emptyState;
 
     let memberFunctions = Object.getOwnPropertyNames(NoteForm.prototype);
     for(let functionName of memberFunctions) {
@@ -41,6 +43,7 @@ class NoteForm extends React.Component {
   // Hooks
   //------------------------------------------
   render() {
+    let buttonText = this.props.note ? 'Update' : 'Create';
     return(
       <form className='note-form' onSubmit={this.handleSubmit}>
         <input 
@@ -59,7 +62,7 @@ class NoteForm extends React.Component {
           value={this.state.content}
           onChange={this.handleChange}
         />
-        <button type='submit'>create note</button>
+        <button type='submit'>{buttonText}</button>
       </form>
     );
   }

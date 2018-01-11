@@ -1,18 +1,21 @@
 import React from "react";
 
+import NoteForm from "../note-form";
+// import Modal from "../modal";
+
 class NoteItem extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
+    let {note, handleRemoveNote} = this.props;
+
+
     return (
-      <div>
-        <li className='note-item'> 
-          <p>Title: {this.props.note.title}</p>
-          <p>Content: {this.props.note.content}</p>
-        </li>
-        <button type='click' onClick={() => {this.props.handleRemoveNote(this.props.note);}}> remove note </button>
+      <div className="note-item">
+        <strong>{note.title}</strong>: {note.content}
+        <button type='click' onClick={handleRemoveNote.bind(null, note)}>Remove</button>
       </div>
     )
   }

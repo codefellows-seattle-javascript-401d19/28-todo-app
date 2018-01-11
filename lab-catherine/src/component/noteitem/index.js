@@ -1,31 +1,16 @@
 import React from 'react';
-import NoteForm from '../note-form';
-import NoteList from '../note-list';
 
 class NoteItem extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      edit: false,
-    };
-
-    let memberFunctions = Object.getOwnPropertyNames(NoteItem.prototype);
-    for(let functionName of memberFunctions) {
-      if(functionName.startsWith('handle')) {
-        this[functionName] = this[functionName].bind(this);
-      }
-    }
-  }
-
   render() {
     return (
-      <div className='note-item'>
-        <div className ='delete'>
-          <button className='delete-button' onClick{handleRemoveNote}>Delete</button>
-        </div>
+      <div>
+        <li className ='note-item'>
+          <p>Title: {this.props.note.title}</p>
+          <p> Content: {this.props.note.content}</p>
+        </li>
+        <button className='delete-button' type="click" onClick={() => {this.props.handleRemoveNote(this.props.note);}}>Delete</button>
       </div>
-    )
+    );
   }
 }
 

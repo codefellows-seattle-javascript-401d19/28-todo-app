@@ -1,32 +1,16 @@
 import React from 'react';
+import NoteItem from '../noteitem';
 
 class NoteList extends React.Component {
-  constructor(props) {
-    super(props);
-
-    let memberFunctions = Object.getOwnPropertyNames(NoteList.prototype);
-    for(let functionName of memberFunctions) {
-      if(functionName.startsWith('handle')) {
-        this[functionName] = this[functionName].bind(this);
-      }
-    }
-  }
-
-  handleNoteList() {
-    return this.props.notes.map((note, index) => {
-      return (
-        <li key={index}>   
-          <p>Title: {note.title}</p>
-          <p> Content: {note.content}</p>
-        </li>
-      );
-    });
-  }
-
   render() {
     return (
-      <div>
-        {this.handleNoteList()}
+      <div className='note-list'>
+        <h2>Your Notes:</h2>
+        <ul>
+          {this.props.notes.map((note, index) => (
+            <NoteItem key={index} note={note} handleRemoveNote={this.props.handleRemoveNote} />
+          ))}
+        </ul>
       </div>
     );
   }

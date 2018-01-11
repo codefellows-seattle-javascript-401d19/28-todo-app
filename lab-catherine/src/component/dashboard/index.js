@@ -1,6 +1,7 @@
 import React from 'react';
 import uuidv1 from 'uuid/v1';
 import NoteForm from '../noteform';
+import NoteList from '../notelist';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -38,7 +39,8 @@ class Dashboard extends React.Component {
     return (
       <div className='dashboard'>
         <h2>Create your own Todo List:</h2>
-        <NoteForm handleAddNote={this.handleAddNote} handleRemoveNote={this.handleRemoveNote}/>
+        <NoteForm handleAddNote={this.handleAddNote}/>
+        <NoteList notes={this.state.notes} handleRemoveNote={this.handleRemoveNote}/>
       </div>
     );
   }

@@ -34,6 +34,10 @@ The purpose of this lab is to build a todo-app using React, and to implement fro
   - jest
   - uuid
 
+## Test
+
+After installing dependencies, run `npm test` to run tests. Tests verify that the initial state of Dashboard includes an empty `notes` array, and the initial state of NoteForm includes an empty string for `title` and `content`.
+
 ## How to use?
 
 Clone this repo, `cd` into `lab-rob`, run `npm i` to install dependencies. 

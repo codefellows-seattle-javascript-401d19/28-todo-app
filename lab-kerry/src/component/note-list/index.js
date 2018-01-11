@@ -12,7 +12,7 @@ class NoteList extends React.Component {
         <h1>Our Notes!</h1>
         <ul>
           {
-            this.props.allNotes.map((note, index) =>
+            this.props.allNotes.map((note, index) => 
               <NoteItem 
                 key={index} 
                 note={note}	

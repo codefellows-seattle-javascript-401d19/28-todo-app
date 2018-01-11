@@ -1,5 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Route, Link} from 'react-router-dom';
+import Landing from '../Landing';
 import Dashboard from '../Dashboard';
 
 class App extends React.Component {
@@ -17,7 +18,7 @@ class App extends React.Component {
                 </ul>
               </nav>
             </header>
-            <Route exact path='/' component={() => <h1>I am a landing page.</h1>} />
+            <Route exact path='/' component={Landing} />
             <Route exact path='/dashboard' component={Dashboard} />
           </div>
         </BrowserRouter>

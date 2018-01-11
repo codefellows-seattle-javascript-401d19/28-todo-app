@@ -40,7 +40,7 @@ class NoteForm extends React.Component {
 
     this.setState({
       title: '',
-      Component: '',
+      content: '',
     });
   }
 

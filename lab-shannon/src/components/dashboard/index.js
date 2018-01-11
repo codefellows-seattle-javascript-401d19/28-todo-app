@@ -12,6 +12,7 @@ class Dashboard extends React.Component{
 
     this.addNote = this.addNote.bind(this);
     this.removeNote = this.removeNote.bind(this);
+    this.showEditView = this.showEditView.bind(this);
   }
 
   addNote(title, content, id = uuid(), editing = 'false', completed = 'false') {
@@ -39,13 +40,16 @@ class Dashboard extends React.Component{
     });
   }
 
+  showEditView() {
+  }
+
   render() {
     return (
       <div>
         <h2>Add A Note</h2>
         <NoteForm addNote={this.addNote}/>
         <h2>Existing Notes</h2>
-        <NoteList removeNote={this.removeNote} notes={this.state.notes}/>
+        <NoteList removeNote={this.removeNote} showEditView={this.showEditView} notes={this.state.notes}/>
       </div>
     );
   }

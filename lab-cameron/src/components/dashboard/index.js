@@ -16,7 +16,7 @@ class Dashboard extends Component {
 
   addNote(note) {
     let noteState = this.state.notes;
-    
+
     note.editing = false;
     note.complete = true;
 

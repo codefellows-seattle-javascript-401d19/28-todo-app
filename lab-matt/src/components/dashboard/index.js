@@ -9,27 +9,25 @@ class Dashboard extends React.Component {
 
     this.state = { notes: [] };
 
-    this.handleAddNote = this.handleAddNote.bind(this);  
-    this.handleRemoveNote = this.handleRemoveNote.bind(this);  
+    this.handleAddNote = (note) => {
+      note.id = v1();
+      note.editing = false;
+      note.completed = false;
+  
+      this.setState({ notes: [...this.state.notes, note] });
+    };
+    
+    this.handleRemoveNote = (uuid) => {
+      this.setState({ notes: this.state.notes.filter((note, i) => {
+        return note.id !== uuid;
+      })});
+    };
   }
 
-  handleAddNote(note) {
-    note.id = v1();
-    note.editing = false;
-    note.completed = false;
-
-    this.setState({ notes: [...this.state.notes, note] });
-  }
-
-  handleRemoveNote(uuid) {
-    this.setState({ notes: this.state.notes.filter((note, i) => {
-      return note.id !== uuid;
-    })});
-  }
 
   render() {
     return (
-      <div>
+      <div className='dashboard'>
         <h2>Hello From the Dashboard</h2>
         <NoteForm addNote={this.handleAddNote} />
         <NoteList notes={this.state.notes} deleteNote={this.handleRemoveNote} />

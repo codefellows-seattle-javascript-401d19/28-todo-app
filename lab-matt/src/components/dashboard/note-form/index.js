@@ -1,6 +1,5 @@
 import React from 'react';
 import { notEqual } from 'assert';
-const autoBind = require('../../auto-bind/index');
 
 class NoteForm extends React.Component {
   constructor(props) {

@@ -6,7 +6,7 @@ class ExpenseForm extends React.Component {
 
     this.state = {
       title : '',
-      price : 0,
+      content : '',
     };
 
     //====================
@@ -29,7 +29,7 @@ class ExpenseForm extends React.Component {
     this.props.handleComplete(this.state);
     this.setState({
       title : '',
-      price : 0,
+      content : '',
     });
   }
 
@@ -47,7 +47,7 @@ class ExpenseForm extends React.Component {
     return(
       <form className="expense-form" onSubmit={this.handleSubmit}>
         <input type="text" name="title" placeholder="title" value={this.state.title} onChange={this.handleChange} />
-        <input type="number" name="price" placeholder="price" step="any" value={this.state.price} onChange={this.handleChange} />
+        <input type="text" name="content" placeholder="content" step="any" value={this.state.content} onChange={this.handleChange} />
         <button type="submit">Create Expense</button>
       </form>
     );

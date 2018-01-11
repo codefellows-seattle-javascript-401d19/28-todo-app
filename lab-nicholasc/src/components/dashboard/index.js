@@ -1,12 +1,13 @@
 import React from 'react';
 import ExpenseForm from '../expense-form';
+import uuidv1 from 'uuid/v1';
 
 class Dashboard extends React.Component{
   constructor(props) {
     super(props);
 
     this.state = {
-      expenses : [],
+      notes : [],
     };
 
     let memberFunctions = Object.getOwnPropertyNames(Dashboard.prototype);
@@ -20,33 +21,39 @@ class Dashboard extends React.Component{
   // Member functions
   //================================
 
-  handleAddExpense(expense){
-    expense.createdOn = new Date();
-    expense.id = Math.floor(Math.random() * 1000000);
+  handleAddNote(note){
+    note.createdOn = new Date().toString();
+    note.id = uuidv1();
+    note.editing = false;
+    note.completed = false;
 
     this.setState(previousState => {
-      return {expenses: [...previousState.expenses, expense]};
+      return {notes: [...previousState.notes, note]};
     });
+  }
+
+  handleRemoveNote(note){
+    let tempNotes = this.state.notes;
+    let index = tempNotes.indexOf(note);
+    tempNotes.splice(index, 1);
+
+    this.setState({notes: tempNotes});
   }
 
   //==================================
   //hooks- React Calls these
   //=================================
   render() {
-    let totalPrice = this.state.expenses.reduce((result, expense) => {
-      return result + Number(expense.price);
-    }, 0);
     return(
       <div className="dashboard">
         <h1> I am the Dashboard </h1>
-        <ExpenseForm handleComplete={this.handleAddExpense} />
+        <ExpenseForm handleComplete={this.handleAddNote} />
         <ul>
           {
-            this.state.expenses.map((expense, index) =>
-              <li key={index}>{expense.title}:${expense.price}</li>)
+            this.state.notes.map((note, index) =>
+              <li key={index}>{note.title}: {note.content}. Written on {note.createdOn}<button onClick={this.handleRemoveNote}>Remove Note</button></li>)
           }
         </ul>
-        <p>The total price is : ${totalPrice}</p>
       </div>
     );
   }

@@ -10,6 +10,6 @@ describe('Dashboard', () => {
   test('Simple test for initial state', () => {
     let mountedDashboard = mount(<Dashboard />);
 
-    expect(mountedDashboard.state('expenses')).toEqual([]);
+    expect(mountedDashboard.state('notes')).toEqual([]);
   });
 });

@@ -1,0 +1,13 @@
+body {
+  background-color: burlywood;
+}
+
+.note-form {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.note-form > * {
+  margin: 10px;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import NoteForm from '../note-form';
+import NoteList from '../note-list';
 
 class Dashboard extends React.Component {
   constructor(props){
@@ -32,20 +33,19 @@ class Dashboard extends React.Component {
   }
 
   handleRemoveNote(note){
-    
+    this.setState(previousState => {
+      return { notes : previousState.notes.filter(item => item.id !== note.id) };
+    });
   }
   //-----------------------------------------
   // Hooks
   //-----------------------------------------
   render(){
-
-  
-
-    return(
+    return (
       <div className='dashboard'>
         <h1>This is the dashboard page..</h1>
         <NoteForm handleAddNote={this.handleAddNote}/>
-        
+        <NoteList notes={this.state.notes} handleRemoveNote={this.handleRemoveNote} />
       </div>
     );
 

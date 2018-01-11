@@ -35,26 +35,24 @@ Using the bound removeNote() method, the note is removed from state by reference
 Using the bound removeNote() method, the note is removed from state by reference to its id and will no longer be rendered on the page.
 
 #### NoteList Component 
-*  Props: 
-*  Uses Props:
-*  Has State: 
+*  Props: Yes
+*  Uses Props: Yes
+*  Has State: No
 
-* should display an unordered list of NoteItem components
+Uses a render () method as a hook to display an unordered list by mapping over the notes array which are passes as props from the Dashboard component.
+
+
 
 #### NoteItem
-*  Props: 
-*  Uses Props:
-*  Has State: 
+*  Props: Yes
+*  Uses Props: Yes
+*  Has State: No
 
-* should display the notes content and title
-* should display a delete button
-  * `onClick` the note should be removed from the application state
+Uses a render () method as a hook to create a list item with a title and content, both of which are accessed as props which are passed in by the Dashboard component. It also renders a button that has `onClick` delete functionality provided by the handleRemoveNote() method.
 
 ## Test
 * Test Dashboard
-  * Test the initial state
+  * Tests the initial state
 * Test NoteForm
-  * Test the initial state
+  * Tests the initial state
 
-##  Documentation  
-Write a description of the project in your README.md

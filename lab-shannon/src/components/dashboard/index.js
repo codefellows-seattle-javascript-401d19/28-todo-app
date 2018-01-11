@@ -28,8 +28,16 @@ class Dashboard extends React.Component{
     });
   }
 
-  removeNote(remainingNotes) {
-    this.setState({notes: remainingNotes});
+  removeNote(noteToRemove) {
+    console.log(noteToRemove, `remove`);
+    this.setState(previousState => {
+      let remainingNotes = previousState.notes.filter(note => {
+        if(note.id !== noteToRemove.id){
+          return note;
+        }
+      });
+      return {notes: remainingNotes};
+    });
   }
 
   render() {

@@ -6,18 +6,18 @@ class NoteList extends React.Component {
     super(props);
 
     this.createList = this.createList.bind(this);
-    this.updateList = this.updateList.bind(this);
+    // this.updateList = this.updateList.bind(this);
   }
-
-  updateList(remainingNotes) {
-    this.props.removeNote(remainingNotes);
-  }
+  //
+  // updateList(remainingNotes) {
+  //   this.props.removeNote(remainingNotes);
+  // }
 
   createList() {
     return this.props.notes.map((note, index) => {
       return (
         <li key={index}>
-          <NoteItem notes={this.props.notes} index={index} updateList={this.updateList}/>
+          <NoteItem notes={this.props.notes} index={index} removeNote={this.props.removeNote}/>
         </li>
       );
     });

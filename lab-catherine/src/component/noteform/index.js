@@ -50,7 +50,7 @@ class NoteForm extends React.Component {
           cols='30'
           rows='10'
           name='content'
-          placeholder='content'
+          placeholder='description'
           value={this.state.content}
           onChange={this.handleChange}
         />

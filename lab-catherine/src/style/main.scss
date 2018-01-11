@@ -1,7 +1,9 @@
 $color-primary: indianRed;
 $color-secondary: goldenRod;
 $color-tertiary: cornSilk;
+$color-landing: darkSlateGray;
 $spacing: 1em;
+$edges: 10px;
 
 * {
   box-sizing: border-box;
@@ -16,13 +18,29 @@ body {
   margin-left: 40px;
 }
 
+nav {
+  background-color: $color-tertiary;
+  border-radius: $edges;
+  text-align: center;
+}
+
 li {
   list-style-type: none;
+  display: inline-block;
+  padding: 10px;
+}
+
+h1 {
+  background-color: $color-landing;
+  border-radius: $edges;
+  padding: 10px 5px;
+  text-align: center;
 }
 
 h2 {
   list-style: none;
   font-size: 15px;
+  color: $color-landing;
 }
 
 img {
@@ -53,13 +71,46 @@ button, input, textarea {
   text-align: center;
   padding: 10px 25px;
   text-decoration: none;
-  display: inline-block;
+  display: block;
+  margin: 0 auto;
   font-size: 16px;
-  border-radius: 10px;
+  border-radius: $edges;
   box-shadow: 2px 2px 2px rgb(0, 0, 0);
+  margin-bottom: 10px;
 }
 
 button:hover {
   color: $color-tertiary;
-  background-color: $color-secondary;
+  background-color: $color-landing;
+}
+
+.landing {
+  background-color: $color-tertiary;
+  padding: 10px;
+  border-radius: $edges;
+  color: $color-landing;
+}
+
+.note-form {
+  background-Color: goldenRod;
+  padding: 20px 10px;
+  border-radius: $edges;
+}
+
+.note-item {
+  background-color: $color-tertiary;
+  padding: 40px 20px;
+  border-radius: $edges;
+  color: $color-landing;
+  border: 2px solid $color-secondary;
+  margin: 20px;
+  overflow-wrap: break-word;
+}
+
+.delete-button {
+  float: left;
+}
+
+.github {
+  text-align: center;
 }

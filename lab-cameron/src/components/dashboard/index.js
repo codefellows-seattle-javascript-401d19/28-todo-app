@@ -28,7 +28,17 @@ class Dashboard extends Component {
     const newNoteState = noteState.filter(note => {
       return note.id !== key;
     });
+    
     this.setState({ notes: [...newNoteState] });
+  }
+
+  updateNote(noteToUpdate) {
+    const noteState = this.state.notes;
+    const newNoteState = noteState.map(note => {
+      note.id === noteToUpdate.id ? noteToUpdate : note;
+    });
+
+    this.setState({ notes: newNoteState });
   }
 
   render() {

@@ -2,7 +2,7 @@ import React from 'react'
 import NoteForm from '../noteform'
 import NoteList from '../notelist'
 
-export default class Dashboard extends React.Component {
+class Dashboard extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -36,3 +36,5 @@ export default class Dashboard extends React.Component {
     )
   }
 }
+
+export default Dashboard

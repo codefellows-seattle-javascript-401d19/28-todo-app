@@ -1,17 +1,21 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 
- export default class NoteItem extends React {
+class NoteItem extends React.Component {
   render(){
     const {id, title, content} = this.props.note
     return (
         <div>
           <p>Title: {title}</p>
           <p>Content: {content}</p>
-          <button onClick={this.props.handleRemove().bind(null,this.props.note)}
-          type='button'
+          <button 
+            type='button'
+            onClick={this.props.handleRemove().bind(null,this.props.note)}
+          
           >Delete</button>
         </div>
      )
    } 
 }
+
+export default NoteItem

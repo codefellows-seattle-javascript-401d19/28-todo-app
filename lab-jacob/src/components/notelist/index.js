@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import NoteItem from '../noteitem'
-export default class NoteList extends React {
+
+class NoteList extends React.Component {
   render() {
     return (
       <div className='note-list'>
@@ -14,3 +15,4 @@ export default class NoteList extends React {
     )
   }
 }
+export default NoteList

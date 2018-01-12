@@ -3,7 +3,7 @@ import {BrowserRouter, Route, Link} from 'react-router-dom';
 import Dashboard from '../dashboard';
 
 
-export default class App extends React.Component{
+class App extends React.Component{
 
   render(){
     return(
@@ -19,11 +19,13 @@ export default class App extends React.Component{
                 </ul>
               </nav>
             </header>
-            <Route exact path='/'component= {() => <h1> Welcome to To-Do</h1>} />
-            <Route exact path='/dashboard' component={Dashboard} />
+            <Route exact path='/'component = {Landing} />
+            <Route exact path='/dashboard' component = {Dashboard} />
           </div>
         </BrowserRouter>
       </div>
     );
   }
 }
+
+export default App 

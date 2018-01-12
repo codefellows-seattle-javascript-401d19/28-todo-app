@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import uuidV1 from 'uuid/v1'
+import React from 'react'
+import uuidv1 from 'uuid/v1'
 
-export default class NoteForm extends React{
+class NoteForm extends React.Component{
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       id: uuidv1(),
       title: '',
@@ -11,9 +11,10 @@ export default class NoteForm extends React{
       editing: false,
       complete: false,
     }
-    
+  
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    
   }
 
   handleChange(event){
@@ -29,7 +30,7 @@ export default class NoteForm extends React{
     this.props.onComplete(note)
 
     this.setState({
-      id: uuidV1(),
+      id: uuidv1(),
       title: '',
       content: '',
       complete: false,
@@ -61,3 +62,5 @@ export default class NoteForm extends React{
     )
   }
 }
+
+export default NoteForm 

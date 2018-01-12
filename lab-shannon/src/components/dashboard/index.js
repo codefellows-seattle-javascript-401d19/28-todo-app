@@ -55,6 +55,7 @@ class Dashboard extends React.Component{
         <h2>Add A Note</h2>
         <NoteForm handleComplete={this.addNote} notes={this.state.notes}/>
         <h2>Existing Notes</h2>
+        <p>Double click on a note to edit it</p>
         <NoteList removeNote={this.removeNote} updateNote={this.updateNote} notes={this.state.notes}/>
       </div>
     );

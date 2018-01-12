@@ -39,7 +39,7 @@ class NoteForm extends React.Component {
   }
 
   render() {
-    let buttonText = this.props.note ? 'Update a Note' : 'Add Note';
+    let buttonText = this.props.note ? 'Update Note' : 'Add a Note';
     return (
       <form className='note-form' onSubmit={this.onComplete}>
         <input

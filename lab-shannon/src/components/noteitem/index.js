@@ -12,7 +12,7 @@ class NoteItem extends React.Component {
     };
 
     return(
-      <li onDoubleClick={showEditView} className='li'>
+      <div onDoubleClick={showEditView} className='div'>
         <p>title: {note.title}</p>
         <p>note: {note.content}</p>
         <button id={note.id}
@@ -22,7 +22,7 @@ class NoteItem extends React.Component {
         <Modal handleExit={hideEditView} visible={note.editing}>
           <NoteForm note={note} handleComplete={handleComplete}/>
         </Modal>
-      </li>
+      </div>
     );
   }
 }

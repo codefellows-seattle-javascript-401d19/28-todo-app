@@ -1,12 +1,19 @@
-$backgroundColor : green;
+$backgroundColor : #7fd87f;
 
 .modal{
   position: fixed;
   top: 0;
-  left:auto;
+  left: 0;
   width: 100%;
   height: 100%;
   background-color: $backgroundColor;
+
+  .main-modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .display-block{
@@ -15,4 +22,14 @@ $backgroundColor : green;
 
 .display-none{
   display: none;
+}
+
+.heading{
+  text-align: center;
+}
+
+.exit{
+  height: 5em;
+  width: 10em;
+  font-weight: bold;
 }

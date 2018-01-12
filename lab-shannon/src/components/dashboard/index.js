@@ -13,7 +13,6 @@ class Dashboard extends React.Component{
     this.addNote = this.addNote.bind(this);
     this.removeNote = this.removeNote.bind(this);
     this.updateNote = this.updateNote.bind(this);
-    this.showEditView = this.showEditView.bind(this);
   }
 
   addNote(noteToCreate, id = uuid(), editing = 'false', completed = 'false') {
@@ -54,18 +53,13 @@ class Dashboard extends React.Component{
     });
   }
 
-  showEditView() {
-    // Show the NoteForm and a Cancel Button
-    // onComplete the NoteForm should update the notes title or content
-  }
-
   render() {
     return (
       <div>
         <h2>Add A Note</h2>
-        <NoteForm addNote={this.addNote} notes={this.state.notes}/>
+        <NoteForm handleComplete={this.addNote} notes={this.state.notes}/>
         <h2>Existing Notes</h2>
-        <NoteList removeNote={this.removeNote} updateNote={this.updateNote} handleEditView={this.handleEditView} notes={this.state.notes}/>
+        <NoteList removeNote={this.removeNote} updateNote={this.updateNote} notes={this.state.notes}/>
       </div>
     );
   }

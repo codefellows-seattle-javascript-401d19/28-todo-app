@@ -8,7 +8,6 @@ const emptyState = {
 class NoteForm extends React.Component {
   constructor(props){
     super(props);
-    console.log(this, `this`);
 
     this.state = this.props.notes.length > 0 ? this.props.notes : emptyState;
 
@@ -26,23 +25,29 @@ class NoteForm extends React.Component {
 
   onComplete(event) {
     event.preventDefault();
-    for (var i = 0; i < this.props.notes.length; i++) {
-      let note = this.props.notes[i];
-      if(note.editing !== 'false'){
-        this.props.updateNote(note);
-      }
-    }
-    this.props.addNote(this.state);
+    this.props.handleComplete(this.state);
+    this.setState({
+      title: '',
+      content: '',
+    });
+    // for (var i = 0; i < this.props.notes.length; i++) {
+    //   let note = this.props.notes[i];
+    //   if(note.editing !== 'false'){
+    //     this.props.updateNote(note);
+    //   }
+    // }
+    // this.props.addNote(this.state);
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps, `nextProps`);
     if(nextProps.note){
       this.setState(nextProps.note);
     }
   }
 
   render() {
+    console.log(this);
+    let buttonText = this.props.notes.length > 0 ? 'Update a Note' : 'Add A Note';
     return (
       <form>
         <input
@@ -60,7 +65,7 @@ class NoteForm extends React.Component {
           placeholder="note"
           onChange={this.handleChange}
         />
-        <button onClick={this.onComplete}>Add Note</button>
+        <button onClick={this.onComplete}>{buttonText}</button>
       </form>
     );
   }

@@ -1,4 +1,5 @@
 import React from 'react';
+import './modal.scss';
 
 class Modal extends React.Component {
   render() {
@@ -8,6 +9,9 @@ class Modal extends React.Component {
     return (
       <div className={shownOrHidden}>
         <button onClick={handleExit}>Exit</button>
+        <main className={'main-modal'}>
+          {this.props.children}
+        </main>
       </div>
     );
   }

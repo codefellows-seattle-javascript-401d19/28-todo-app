@@ -8,7 +8,6 @@ class Modal extends React.Component {
 
     return (
       <div className={visibilityClass}>
-        <button onClick={this.props.handleClose}>X</button>
         <main className='modal-main'>
           {this.props.children}
         </main>

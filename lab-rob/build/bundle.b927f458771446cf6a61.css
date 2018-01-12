@@ -1,0 +1,194 @@
+@import url(https://fonts.googleapis.com/css?family=Comfortaa|Dancing+Script|Poiret+One);html,
+body {
+  background-color: #ffaedb;
+}
+
+.app h1,
+.app a {
+  font-family: 'Comfortaa', cursive;
+  text-align: center;
+}
+
+.app nav ul {
+  padding-left: 0;
+  text-align: center;
+}
+
+.app nav li {
+  display: inline-block;
+  width: 8em;
+}
+
+.app nav li:first-child {
+  margin-right: 5%;
+}
+
+.app nav a {
+  display: inline-block;
+  background: #bc94e4;
+  height: 2em;
+  width: 100%;
+  padding-top: 15%;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: all, .3s;
+}
+
+.app nav a:hover {
+  background: #b082df;
+}
+
+.app nav a:visited {
+  color: inherit;
+}
+
+.app nav a:active {
+  border: 2px solid black;
+  background: #dfbfff;
+  color: #f6ebff;
+}
+
+.dashboard * {
+  text-align: center;
+}
+
+.dashboard p,
+.dashboard h2 {
+  font-family: 'Poiret One', cursive;
+  text-align: center;
+}
+
+.dashboard h2 {
+  font-size: 2em;
+}
+
+.dashboard p {
+  font-weight: bold;
+  line-height: 1.5em;
+  font-size: 1.25em;
+}
+
+.note-form input[type=text],
+.note-form textarea {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2em;
+  display: block;
+  margin: 1em auto 0;
+  width: 50%;
+}
+
+.note-form textarea {
+  font-size: 1.5em;
+  height: 100px;
+  resize: none;
+}
+
+.note-form button {
+  font-family: 'Comfortaa', cursive;
+  background: #bc94e4;
+  height: 3em;
+  width: 8em;
+  font-size: 16px;
+  margin-top: 5px;
+  border-radius: 10px;
+  transition: all, .3s;
+  cursor: pointer;
+  outline: none;
+}
+
+.note-form button:hover {
+  background: #b082df;
+}
+
+.note-form button:active {
+  border: 2px solid black;
+  background: #dfbfff;
+  color: #f6ebff;
+}
+
+.note-list {
+  list-style: none;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5em;
+  width: 50%;
+  padding-left: 0;
+  margin: 1em auto;
+}
+
+.note-list li {
+  margin-bottom: .5em;
+}
+
+.note-item {
+  text-align: left;
+}
+
+.note-item .content {
+  text-align: left;
+  overflow: auto;
+  height: auto;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(69, 69, 69, 0.69);
+}
+
+.modal .modal-main {
+  position: fixed;
+  background: #65bde3;
+  top: 24%;
+  left: 10%;
+  width: 80%;
+  height: 52%;
+}
+
+.modal .close-modal {
+  font-family: 'Comfortaa', cursive;
+  position: fixed;
+  top: 25%;
+  left: 11%;
+  border-radius: 50%;
+  background-color: white;
+  transition: all, .3s;
+  outline: none;
+  cursor: pointer;
+}
+
+.modal .close-modal:hover {
+  background: #b082df;
+}
+
+.modal .close-modal:active {
+  border: 2px solid white;
+  background: #dfbfff;
+  color: #f6ebff;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+.landing * {
+  font-family: 'Poiret One', cursive;
+  text-align: center;
+}
+
+.landing h2 {
+  font-size: 2em;
+}
+
+.landing p {
+  font-weight: bold;
+  line-height: 1.5em;
+  font-size: 1.25em;
+}
+

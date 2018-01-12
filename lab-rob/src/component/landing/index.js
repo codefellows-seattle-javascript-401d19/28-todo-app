@@ -1,3 +1,5 @@
+import './landing.scss';
+
 import React from 'react';
 
 class Landing extends React.Component {
@@ -5,7 +7,7 @@ class Landing extends React.Component {
     return (
       <div className="landing">
         <h2>Welcome!</h2>
-        <p>Please enjoy this app! Create trouble-free todo lists at the pace of <em>you</em>!</p>
+        <p>Please enjoy this app! Create trouble-free todo lists at the pace of <em>you!</em></p>
       </div>
     );
   }

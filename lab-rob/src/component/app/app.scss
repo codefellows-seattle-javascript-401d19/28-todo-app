@@ -1,0 +1,47 @@
+.app {
+  h1, a {
+    font-family: 'Comfortaa', cursive;
+    text-align: center;
+  }
+
+  nav {
+    ul {
+      padding-left: 0;
+      text-align: center;
+    }
+
+    li {
+      display: inline-block;
+      width: 8em;
+    }
+
+    li:first-child {
+      margin-right: 5%;
+    }
+
+    a {
+      display: inline-block;
+      background: #bc94e4;
+      height: 2em;
+      width: 100%;
+      padding-top: 15%;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: all, .3s;
+    }
+
+    a:hover {
+      background: #b082df;
+    }
+    
+    a:visited {
+      color: inherit;
+    }
+    
+    a:active {
+      border: 2px solid black;
+      background: #dfbfff;
+      color: #f6ebff;
+    }
+  }
+}

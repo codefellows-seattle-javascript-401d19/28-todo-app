@@ -1,3 +1,5 @@
+import './dashboard.scss';
+
 import React from 'react';
 import uuid from 'uuid/v1';
 
@@ -21,7 +23,7 @@ class Dashboard extends React.Component {
   }
 
   // -----------------------------
-  // Member's Only
+  // Member's Only!
   // -----------------------------
 
   addNote(note) {
@@ -36,9 +38,8 @@ class Dashboard extends React.Component {
 
   updateNote(updatedNote) {
     this.setState(previousState => ({
-      notes: previousState.notes.map(note => (
-        note.id === updatedNote.id ? updatedNote : note)
-      ),
+      notes: previousState.notes
+        .map(note => (note.id === updatedNote.id ? updatedNote : note)),
     }));
   }
 
@@ -57,7 +58,8 @@ class Dashboard extends React.Component {
     return (
       <div className="dashboard">
         <h2>Dashboard</h2>
-        <p>Create a note and it will appear in a list below!</p>
+        <p>Create a note and it will appear in a list below!</p> 
+        <p>To edit your note, double click the note's content.</p>
         <NoteForm handleComplete={this.addNote} />
         <NoteList notes={this.state.notes} removeNote={this.removeNote} updateNote={this.updateNote} />
       </div>

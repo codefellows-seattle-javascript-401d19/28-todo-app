@@ -1,3 +1,5 @@
+import './note-form.scss';
+
 import React from 'react';
 
 import autoBind from '../../lib/auto-bind';
@@ -52,8 +54,8 @@ class NoteForm extends React.Component {
 
     return (
       <form className='note-form' onSubmit={this.handleSubmit}>
-        <input type='text' name='title' placeholder='Title' value={this.state.title} onChange={this.handleChange} />
-        <textarea cols='20' rows='20' name='content' placeholder='Type your note here...' value={this.state.content} onChange={this.handleChange} />
+        <input type='text' name='title' placeholder='Title' value={this.state.title} onChange={this.handleChange} required='required' />
+        <textarea name='content' placeholder='Type your note here...' value={this.state.content} onChange={this.handleChange} required='required' />
         <button type='submit'>{submitText}</button>
       </form>
     );  

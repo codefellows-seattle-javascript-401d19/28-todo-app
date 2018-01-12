@@ -8,6 +8,25 @@
   margin: 1em auto;
 
   li {
-    margin-bottom: .5em;
+    margin-bottom: 1.5em;
+  }
+
+  .remove-note {
+    font-family: 'Comfortaa', cursive;    
+    border-radius: 50%;
+    background-color: white;
+    transition: all, .3s;
+    outline: none;
+    cursor: pointer;    
+  }
+
+  .remove-note:hover {
+    background: #b082df;
+  }
+
+  .remove-note:active {
+    border: 2px solid white;
+    background: #dfbfff;
+    color: #f6ebff;
   }
 }

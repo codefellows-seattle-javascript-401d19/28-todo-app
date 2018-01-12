@@ -78,7 +78,7 @@ body {
 }
 
 .note-form textarea {
-  font-size: 1.5em;
+  font-size: 24px;
   height: 100px;
   resize: none;
 }
@@ -89,7 +89,7 @@ body {
   height: 3em;
   width: 8em;
   font-size: 16px;
-  margin-top: 5px;
+  margin-top: 10px;
   border-radius: 10px;
   transition: all, .3s;
   cursor: pointer;
@@ -116,7 +116,26 @@ body {
 }
 
 .note-list li {
-  margin-bottom: .5em;
+  margin-bottom: 1.5em;
+}
+
+.note-list .remove-note {
+  font-family: 'Comfortaa', cursive;
+  border-radius: 50%;
+  background-color: white;
+  transition: all, .3s;
+  outline: none;
+  cursor: pointer;
+}
+
+.note-list .remove-note:hover {
+  background: #b082df;
+}
+
+.note-list .remove-note:active {
+  border: 2px solid white;
+  background: #dfbfff;
+  color: #f6ebff;
 }
 
 .note-item {
@@ -125,8 +144,8 @@ body {
 
 .note-item .content {
   text-align: left;
-  overflow: auto;
-  height: auto;
+  word-wrap: break-word;
+  cursor: pointer;
 }
 
 .modal {
@@ -141,16 +160,16 @@ body {
 .modal .modal-main {
   position: fixed;
   background: #65bde3;
-  top: 24%;
+  top: 18.25%;
   left: 10%;
   width: 80%;
-  height: 52%;
+  height: 63.5%;
 }
 
 .modal .close-modal {
   font-family: 'Comfortaa', cursive;
   position: fixed;
-  top: 25%;
+  top: 20%;
   left: 11%;
   border-radius: 50%;
   background-color: white;

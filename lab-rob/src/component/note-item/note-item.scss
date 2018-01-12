@@ -3,7 +3,7 @@
 
   .content {
     text-align: left;
-    overflow: auto;
-    height: auto;
+    word-wrap: break-word;
+    cursor: pointer;
   }
 }

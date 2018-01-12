@@ -16,7 +16,7 @@ class NoteItem extends React.Component {
     return (
       <div className='note-item'>
         <strong><span className='item-number'>{this.props.itemNumber}.</span> {note.title} &mdash; </strong>
-        <button onClick={removeNote.bind(null, note)}>x</button> 
+        <button className='remove-note' onClick={removeNote.bind(null, note)}>x</button> 
         <div className='content' onDoubleClick={showModal}>{note.content}</div>
         
         <Modal handleClose={hideModal} show={note.editing}>

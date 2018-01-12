@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import NoteForm from '../noteform';
 import NoteList from '../notelist';
+import uuidv1 from 'uuid/v1';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class Dashboard extends Component {
 
     this.addNote = this.addNote.bind(this);
     this.removeNote = this.removeNote.bind(this);
+    this.updateNote = this.updateNote.bind(this);
   }
 
   addNote(note) {
@@ -19,26 +21,27 @@ class Dashboard extends Component {
 
     note.editing = false;
     note.complete = true;
+    note.id = uuidv1();
 
-    this.setState({notes: [...noteState, note]});
+    this.setState(previousState => {
+      return {notes: [...previousState.notes, note]};
+    });
   }
 
   removeNote(key) {
-    const noteState = this.state.notes;
-    const newNoteState = noteState.filter(note => {
-      return note.id !== key;
-    });
-
-    this.setState({ notes: [...newNoteState] });
+    this.setState(previousState => ({
+      notes: previousState.notes.filter(note => {
+        return note.id !== key;
+      }),
+    }));
   }
 
   updateNote(noteToUpdate) {
-    const noteState = this.state.notes;
-    const newNoteState = noteState.map(note => {
-      note.id === noteToUpdate.id ? noteToUpdate : note;
-    });
-
-    this.setState({ notes: newNoteState });
+    this.setState(previousState => ({
+      notes: previousState.notes.map(note => {
+        return note.id === noteToUpdate.id ? noteToUpdate : note;
+      }),
+    }));
   }
 
   render() {

@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
-import uuidv1 from 'uuid/v1';
 
 const emptyState = {
-  id: uuidv1(),
   title: '',
   content: '',
-  editing: false,
-  complete: false,
 };
 
 class NoteForm extends Component {
@@ -33,16 +29,14 @@ class NoteForm extends Component {
     this.props.onComplete(this.state);
 
     this.setState({
-      id: uuidv1(),
       title: '',
       content: '',
-      complete: false,
     });
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.note) {
-      this.setState(nextProps.expense);
+      this.setState(nextProps.note);
     }
   }
 

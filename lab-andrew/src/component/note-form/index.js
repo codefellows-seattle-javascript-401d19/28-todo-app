@@ -46,9 +46,11 @@ class NoteForm extends React.Component {
           onChange={this.handleChange}
         />
         <br/>
-        <input
+        <textarea
           type='text'
           name='content'
+          cols='40'
+          rows='10'
           placeholder='content'
           value={this.state.content}
           onChange={this.handleChange}

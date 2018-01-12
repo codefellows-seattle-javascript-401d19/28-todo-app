@@ -1,16 +1,16 @@
 import React from 'react';
-import uuid from 'uuid';
 
 import autoBind from '../../lib/auto-bind';
 
+let emptyState = {
+  title: '',
+  content: '',
+};
 class NoteForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      title: '',
-      content: '',
-    };
+    this.state = this.props.note ? this.props.note : emptyState;
 
     autoBind(this, NoteForm);
   }
@@ -30,13 +30,7 @@ class NoteForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    this.props.onComplete({
-      id: uuid.v1(),
-      editing: false,
-      completed: false,
-      content: event.target.content.value,
-      title: event.target.title.value,
-    });
+    this.props.handleComplete(this.state);
 
     this.setState({
       title: '',
@@ -48,15 +42,20 @@ class NoteForm extends React.Component {
   // Captain Hooks
   // -----------------------------
 
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.note)
+      this.setState(nextProps.note);
+  }
+
   render() {
+    let submitText = this.props.note ? 'Update' : 'Add';
+
     return (
-      <div className='note-form'>
-        <form onSubmit={this.handleSubmit}>
-          <input name='title' value={this.state.title} placeholder='Title' onChange={this.handleChange} />
-          <textarea cols='20' rows='20' name='content' placeholder='Note Content' value={this.state.content} onChange={this.handleChange} />
-          <button type='submit'>Submit Note</button>
-        </form>
-      </div>
+      <form className='note-form' onSubmit={this.handleSubmit}>
+        <input type='text' name='title' placeholder='Title' value={this.state.title} onChange={this.handleChange} />
+        <textarea cols='20' rows='20' name='content' placeholder='Type your note here...' value={this.state.content} onChange={this.handleChange} />
+        <button type='submit'>{submitText}</button>
+      </form>
     );  
   }
 }

@@ -59,7 +59,7 @@ class NoteForm extends React.Component {
           value={this.state.title}
           onChange={this.handleChange}
           />
-        <textarea
+        <textarea className='list-content'
           type='type'
           cols='30'
           rows='5'

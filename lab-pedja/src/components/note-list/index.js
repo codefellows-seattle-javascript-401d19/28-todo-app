@@ -5,7 +5,6 @@ class NoteList extends React.Component {
   render() {
     return (
       <div>
-        <h3>All your TODOs</h3>
         <ul>
           {this.props.notes.map((note, index) => (
             <NoteItem 

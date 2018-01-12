@@ -58,7 +58,7 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div className='dashboard'>
-      <h2>Dashboard - TODO list</h2>
+      <h2>Dashboard TODO list</h2>
       <NoteForm handleComplete={this.handleAddNote} />
       <NoteList 
         notes={this.state.notes}

@@ -9,13 +9,13 @@ class App extends React.Component {
     return (
       <div className='app'>
         <BrowserRouter>
-          <div>
+          <div className='container'>
             <header>
-              <h1>TODO tracker </h1>
-              <nav>
+              <h1>TODO tracker</h1>
+              <nav className='vertical-nav'>
                 <ul>
-                  <li><Link to='/'>Home</Link></li>
-                  <li><Link to='/dashboard'>Dashboard</Link></li>
+                  <li><a><Link to='/'>Home</Link></a></li>
+                  <li><a><Link to='/dashboard'>Dashboard</Link></a></li>
                 </ul>
               </nav>
             </header>

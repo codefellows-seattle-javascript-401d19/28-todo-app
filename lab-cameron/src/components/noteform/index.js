@@ -43,9 +43,10 @@ class NoteForm extends Component {
   render() {
     const buttonText = this.props.note ? 'Update' : 'Create';
     return (
-      <div>
+      <div id='noteform'>
         <form onSubmit={this.handleSubmit}>
           <input
+            id='note-title'
             type='text'
             name='title'
             placeholder='title'
@@ -53,7 +54,8 @@ class NoteForm extends Component {
             onChange={this.handleChange}
           />
           <br />
-          <input
+          <textarea
+            id='note-content'
             type='text'
             name='content'
             placeholder='content'

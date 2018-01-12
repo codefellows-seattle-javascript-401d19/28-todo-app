@@ -1,7 +1,7 @@
-# 28: Routing and Testing
-Description: **Lab 28 of Code Fellows JavaScript 401d19** </br>
+# 28/29: Routing and Testing
+Description: **Lab 28/29 of Code Fellows JavaScript 401d19** </br>
 Author: **Matthew LeBlanc** </br>
-Date: **01/10/18**
+Date: **01/11/18**
 
 ## Features
 This lab features an app that allows a user to add and remove notes, by creating react components and manipulating state. Later adding an update feature to the notes by double clicking them. And Eventually Adding sass to style.

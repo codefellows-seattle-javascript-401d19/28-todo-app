@@ -1,13 +1,16 @@
 import React from 'react';
 
+const emptyState = {
+  content : '',
+  title : '',
+};
+
 class NoteForm extends React.Component {
   constructor(props){
     super(props);
+    console.log(this, `this`);
 
-    this.state = {
-      content : '',
-      title : '',
-    };
+    this.state = this.props.notes.length > 0 ? this.props.notes : emptyState;
 
     this.onComplete = this.onComplete.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -23,7 +26,20 @@ class NoteForm extends React.Component {
 
   onComplete(event) {
     event.preventDefault();
-    this.setState(this.props.addNote(this.state.title, this.state.content));
+    for (var i = 0; i < this.props.notes.length; i++) {
+      let note = this.props.notes[i];
+      if(note.editing !== 'false'){
+        this.props.updateNote(note);
+      }
+    }
+    this.props.addNote(this.state);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps, `nextProps`);
+    if(nextProps.note){
+      this.setState(nextProps.note);
+    }
   }
 
   render() {

@@ -1,14 +1,25 @@
 import React from 'react';
+import Modal from '../modal';
+import NoteForm from '../noteform';
 
 class NoteItem extends React.Component {
   render() {
-    let {title, content, id, editing, completed} = this.props.notes[this.props.index];
-    let {showEditView} = this.props;
+    let note = this.props.notes[this.props.index];
+    let {handleEditView, removeNote, updateNote} = this.props;
+    let showEditView = () => handleEditView({...note, editing: 'true'});
+    let hideEditView = () => handleEditView({...note, editing: 'false'});
+
     return(
       <div onDoubleClick={showEditView} className='div'>
-        <p>title: {title}</p>
-        <p>note: {content}</p>
-        <button id={id} onClick={this.props.removeNote.bind(null, this.props.notes[this.props.index])}>Remove Note</button>
+        <p>title: {note.title}</p>
+        <p>note: {note.content}</p>
+        <button id={note.id}
+          onClick={removeNote.bind(null, note)}>
+          Remove Note
+        </button>
+        <Modal handleExit={hideEditView} visible={note.editing}>
+          <NoteForm notes={this.props.notes}/>
+        </Modal>
       </div>
     );
   }

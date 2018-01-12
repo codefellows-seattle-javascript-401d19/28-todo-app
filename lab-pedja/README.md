@@ -1,7 +1,7 @@
-![cf](http://i.imgur.com/7v5ASc8.png) Lab 28 To do list 
+![cf](http://i.imgur.com/7v5ASc8.png) Lab 28 To do list + 29
 ====
 
-* Simple TODO react page where you can add `*title*` and `*content*` of you TODO list as well as feature to `*remove*` note. Purpose of this lab is building more react components as well as adding front end routing and REACT testing. App component as parent and children (Dashboard, NoteForm, NoteList and NoteItem)
+* Simple TODO react page where you can add `title` and `content` of you TODO list as well as feature to `remove` and `edit` note. Edit button will take us to new panel where item list title and content can be updated. Double clicking on item in our list will also take you to panel view where item can be changed. Purpose of this lab is building more react components as well as adding front end routing and REACT testing. App component as parent and children (Dashboard, NoteForm, NoteList and NoteItem). 
 
 ## Code Style
 * Javascript ES6, JSX
@@ -45,6 +45,9 @@
 
 ### NodeItem Component
 * contains note's `title` and `content` as well as `remove note` button
+
+### Modal Component
+* uses `this.props.children` to render content in our component
 
 ### Test
 * Test Dashboard

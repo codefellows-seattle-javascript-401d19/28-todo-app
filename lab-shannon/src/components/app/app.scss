@@ -1,0 +1,25 @@
+$headerColor: #1E88E5;
+
+h1{
+  text-align: center;
+  background-color: $headerColor;
+  margin: 0;
+  padding: .8em;
+}
+
+nav{
+  ul{
+    text-align: center;
+    li{
+      list-style: none;
+      display: inline;
+      margin: 10px;
+    }
+  }
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+  left: 2em;
+}

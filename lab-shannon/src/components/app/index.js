@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter, Link, Route} from 'react-router-dom';
 import Landing from '../landing';
 import Dashboard from '../dashboard';
+import './app.scss';
 
 class App extends React.Component {
   render(){
@@ -20,6 +21,9 @@ class App extends React.Component {
             </nav>
             <Route exact path = '/' component={Landing}/>
             <Route exact path = '/dashboard' component={Dashboard}/>
+            <footer>
+              <p>Copyright 2018</p>
+            </footer>
           </div>
         </BrowserRouter>
       </div>

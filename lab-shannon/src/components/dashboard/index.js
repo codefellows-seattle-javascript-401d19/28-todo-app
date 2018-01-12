@@ -2,6 +2,7 @@ import React from 'react';
 import NoteForm from '../noteform';
 import NoteList from '../notelist';
 import uuid from 'uuid/v1';
+import './dashboard.scss';
 
 class Dashboard extends React.Component{
   constructor(props){
@@ -51,7 +52,7 @@ class Dashboard extends React.Component{
 
   render() {
     return (
-      <div>
+      <div className='dashboard'>
         <h2>Add A Note</h2>
         <NoteForm handleComplete={this.addNote} notes={this.state.notes}/>
         <h2>Existing Notes</h2>

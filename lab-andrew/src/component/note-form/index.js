@@ -12,7 +12,7 @@ class NoteForm extends React.Component {
     this.state = this.props.note ? this.props.note : emptyState;
 
     this.handleChange = this.handleChange.bind(this);
-    this.addNote = this.addNote.bind(this);
+    this.completeNote = this.completeNote.bind(this);
   }
 
   handleChange(event){
@@ -23,9 +23,9 @@ class NoteForm extends React.Component {
     });
   }
 
-  addNote(event){
+  completeNote(event){
     event.preventDefault();
-    this.props.newNote(this.state.title, this.state.content);
+    this.props.completeNote(this.state);
     this.setState({title: '', content: ''});
   }
 
@@ -37,7 +37,7 @@ class NoteForm extends React.Component {
   render(){
     let buttonText = this.props.note ? 'Update Note!' : 'Add Note!';
     return (
-      <form onSubmit={this.addNote}>
+      <form onSubmit={this.completeNote}>
         <input
           type='text'
           name='title'
@@ -45,6 +45,7 @@ class NoteForm extends React.Component {
           value={this.state.title}
           onChange={this.handleChange}
         />
+        <br/>
         <input
           type='text'
           name='content'
@@ -52,6 +53,7 @@ class NoteForm extends React.Component {
           value={this.state.content}
           onChange={this.handleChange}
         />
+        <br/>
         <input
           type='submit'
           value={buttonText}

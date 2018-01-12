@@ -1,7 +1,7 @@
 import React from 'react';
 import NoteForm from '../note-form';
-import NoteList from '../note-list';
 import NoteItem from '../note-item';
+import NoteList from '../note-list';
 import uuid from 'uuid';
 
 class Dashboard extends React.Component {
@@ -36,10 +36,15 @@ class Dashboard extends React.Component {
 
   }
 
-  handleRemoveNote(note) {
+  handleRemoveNote(noteToRemove) {
     this.setState(previousState => {
-	
-      return { notes: previousState.notes.filter(item => item.id !== note.id)};
+      return { notes: previousState.notes.filter(note => note.id !== noteToRemove.id)};
+    });
+  }
+
+  handleUpdateNote(noteToUpdate) {
+    this.setState(previousState => {
+      return  {notes: previousState.notes.map(note => note.id === noteToUpdate.id ? noteToUpdate : note)};
     });
   }
   //...............................................................
@@ -50,11 +55,17 @@ class Dashboard extends React.Component {
       <div className='dashboard'>
         <h1>Dashboard!</h1>
         <NoteForm handleComplete={this.handleAddNote} />
-		
-        <NoteList 
-          allNotes={this.state.notes} 
-          handleRemoveNote={this.handleRemoveNote}/>
-
+        <ul>
+          {
+            this.state.notes.map((note, index) => 
+              <li key={index}>
+                <NoteItem
+                  note={note} 
+                  handleRemoveNote={this.handleRemoveNote}
+                  handleUpdateNote={this.handleUpdateNote}/>
+              </li>)
+          }
+        </ul>
       </div>
     );
   }

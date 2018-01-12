@@ -1,14 +1,18 @@
 import React from 'react';
 
+let defaultState = {
+  title: '',
+  content: '',
+}
 
 class NoteForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      title: '',
-      content: '',
-    };
+   
+
+    this.state = this.props.expense ? this.props.expense : defaultState;
+    
     //...............................................................
     /* Binding Handlers */
     //...............................................................
@@ -36,7 +40,7 @@ class NoteForm extends React.Component {
   }
 
   handleChange(event) {
-    let { name, value, type } = event.target;
+    let { name, value} = event.target;
 
     this.setState({
       //This ES6 syntax updates the field based on its name.  Name is replaced by the field name and the value is the input.
@@ -49,7 +53,14 @@ class NoteForm extends React.Component {
   /* Hooks - these React will call for you */
   //...............................................................
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.notes) {
+      this.setState(nextProps.notes);
+    }
+  }
+
   render() {
+    let buttonText = this.props.note ? 'Update' : 'Create';
     return (
       <form className='note-form' onSubmit={this.handleSubmit}>
         <input
@@ -70,7 +81,7 @@ class NoteForm extends React.Component {
           onChange={this.handleChange}
         />
         <br/>
-        <button type='submit'>Create New Note</button>
+        <button type='submit'>{buttonText}</button>
       </form>
     );
   }

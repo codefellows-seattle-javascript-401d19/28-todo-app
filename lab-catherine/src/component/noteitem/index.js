@@ -15,10 +15,10 @@ class NoteItem extends React.Component {
 
     return (
       <div>
-        <li onDoubleClick={showModal} className ='note-item'>
+        <h3 onDoubleClick={showModal} className ='note-item'>
           <p>Title: {note.title}</p>
           <p> Content: {note.content}</p>
-        </li>
+        </h3>
         <button onClick={showModal}>Edit</button>
         <button className='delete-button' type="click" onClick={handleRemoveNote.bind(null, note)}>Delete</button>
         <Modal handleClose={hideModal} show={note.editing}>

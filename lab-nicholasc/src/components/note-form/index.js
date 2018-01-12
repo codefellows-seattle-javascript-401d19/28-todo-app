@@ -48,7 +48,7 @@ class NoteForm extends React.Component {
       <form className="note-form" onSubmit={this.handleSubmit}>
         <input type="text" name="title" placeholder="title" value={this.state.title} onChange={this.handleChange} />
         <input type="text" name="content" placeholder="content" step="any" value={this.state.content} onChange={this.handleChange} />
-        <button type="submit">Create Expense</button>
+        <button type="submit">Create Note</button>
       </form>
     );
   }

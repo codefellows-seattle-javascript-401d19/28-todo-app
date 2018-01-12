@@ -9,12 +9,14 @@ class NoteList extends React.Component {
         <ul>
           {
             this.props.notes.map((note, index) =>
-              <NoteItem key={index} note={note} />
+              <NoteItem key={index} note={note} handleRemoveNote={this.props.handleRemoveNote}/>
             )
           }
         </ul>
+
       </div>
     );
   }
 }
-// <li key={index}>{note.title}: {note.content}. Written on {note.createdOn}<button onClick={this.handleRemoveNote}>Remove Note</button></li>)
+
+export default NoteList;

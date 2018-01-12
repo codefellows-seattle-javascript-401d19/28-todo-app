@@ -11,7 +11,7 @@ class NoteItem extends React.Component {
             onClick={this.props.handleRemoveNote.bind(null, this.props.note)}>
             Remove Note
           </button>
-        </li>)
+        </li>
       </div>
     );
   }

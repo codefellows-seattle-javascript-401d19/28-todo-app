@@ -1,0 +1,91 @@
+.display-none {
+  display: none;
+}
+.display-block {
+  display: block;
+}
+
+/* ----------- MODAL ----------- */
+.modal {
+  background-color: #969696;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  z-index: 10;
+  
+  .modal-main {
+    background-color: rgb(255, 114, 58);
+    position: absolute;
+    margin: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 70%;
+    min-height: 60%;
+    border: 10px ridge rgb(199, 63, 0);
+
+    .close-editor {
+      position: absolute;
+      top: 0.6em;
+      right: 0.6em;
+      width: 80px;
+      height: 30px;
+      border: black 2px outset;
+      border-radius: 8%;
+      font-weight: 1000;
+    }
+
+    h1 {
+      font-size: 2.3em;
+      text-align: center;
+      box-shadow: 0px 2px 2px black;
+      padding: 10px 0;
+      color: white;
+    }
+
+    .note-form {
+      min-height: 20em;
+      background-color: rgba(0, 0, 0, 0);
+      display: block;
+      min-width: 0px;
+      margin: 0;
+      border: none;
+
+      input {
+        display: block;
+        font-size: 2.3em;
+        margin: 0 auto;
+        margin-top: 0.3em;
+      
+      }
+
+      textarea {
+        margin: 10px 5%;
+        width: 90%;
+        min-height: 15em;
+        margin-bottom: 3.1em;
+        font-size: 1.8em;
+      }
+
+      button {
+        position: absolute;
+        bottom: .38em;
+        left: 50%;
+        transform: translate(-50%);
+        font-size: 2.2em;
+        padding: .1em;
+        margin: 0;
+        top: unset;
+      }
+    }
+  }
+}
+
+
+
+
+
+

@@ -1,6 +1,36 @@
 $rose-gold: rgb(255, 134, 78);
 $purple: rgb(151, 49, 151);
 
-body {
-  background-color: $rose-gold;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  background-color: #baddad;
+  min-height: 100vh;
+  overflow: auto;
+}
+div {
+  text-align: center;
+}
+
+header h1 {
+  text-align: center;
+  margin: 20px auto;
+  margin-bottom: 0;
+  font-size: 4em;
+  box-shadow: 0px 2px 2px black;
+  
+}
+nav ul {
+  width: 100%;
+  padding: 8px;
+  text-align: center;
+  box-shadow: 0px 2px 2px black;
+  
+}
+nav ul li {
+  display: inline-block; 
+  margin: 0 3px;
 }

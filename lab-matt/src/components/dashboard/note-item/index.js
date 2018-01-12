@@ -13,13 +13,14 @@ class NoteItem extends React.Component {
       updateNote({...note, editing: false});      
     };
 
-    let header = note.title.trim() ? `'${note.title}'` : `'un-named note'`;
+    let title = note.title.trim() ? note.title : 'un-named';
+    let content = note.content.trim() ? note.content.trim() : 'Content:';
     return(
       <ul className='note-item' onDoubleClick={showModal}>
-        <li>Title: {note.title}</li>
-        <li>Content: {note.content}</li>
+        <li>{title}</li>
+        <li>{content}</li>
         <Modal handleClose={hideModal} setVisibility={note.editing}> 
-          <h1>Editing {header}</h1>
+          <h1>Editing {`'${title} note'`}</h1>
           <NoteForm note={note} handleNote={updateAndHide} />
         </Modal>
       </ul>

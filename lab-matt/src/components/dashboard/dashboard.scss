@@ -1,0 +1,79 @@
+.dashboard {
+  h2 {
+    font-size: 2em;
+    text-align: center;
+    margin-top: 1em;
+  }
+
+  .note-form {
+    background-color: rgb(77, 176, 201);
+    display: inline-block;
+    min-width: 400px;
+    margin: 20px auto;
+    border: 6px ridge rgb(255, 0, 43);
+
+
+    input {
+      display: block;
+      margin: 1em 3em;
+      font-size: 2em;
+    }
+
+
+    textarea {
+      display: block;
+      width: 90%;
+      margin: 2em auto;
+      margin-bottom: 0;
+      min-height: 200px;
+      font-size: 1.2em;  
+    }
+
+    button {
+      font-size: 1.6em;
+      padding: .2em;
+      margin: 1em;
+    }
+  }
+
+  .note-list {
+    text-align: left;
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+
+    .delete {
+      position: absolute;
+      right: .7%;
+      font-size: 1.5em;
+      padding: .1em;
+    }
+
+    .note-item {
+      border: 3px gray ridge;
+      background-color: #faddad;
+      padding: 10px;
+
+      li {
+        list-style-type: none;
+      }
+
+      li:first-child {
+        font-size: 2em;
+        text-decoration: underline;
+        font-weight: 500;
+        font-style: italic;
+        margin-bottom: 0.5em;
+      }
+
+      li:nth-child(2) {
+        font-size: 1.2em;
+        background-color: antiquewhite;
+        padding: 0.1em 0.3em 0.5em;
+        padding-top: .1em;
+        white-space: pre-wrap;
+      }
+    }
+  }
+}

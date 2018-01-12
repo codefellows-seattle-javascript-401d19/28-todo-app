@@ -16,7 +16,7 @@ class NoteList extends React.Component {
       return (
         <ul className='note-list' key={index}>
           <NoteItem note={note} updateNote={this.handleUpdate}/>
-          <button className={note.id} onClick={this.props.deleteNote.bind(null, note)}>Delete</button>
+          <button className={note.id + ' delete'} onClick={this.props.deleteNote.bind(null, note)}>Delete</button>
         </ul>
       );
     });

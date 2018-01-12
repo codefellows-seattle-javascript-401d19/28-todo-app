@@ -2,6 +2,7 @@ import React from 'react';
 import NoteForm from './note-form/';
 import NoteList from './note-list/';
 import {v1} from 'uuid';
+import './dashboard.scss';
 
 class Dashboard extends React.Component {
   constructor() {
@@ -33,8 +34,10 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div className='dashboard'>
-        <h2>Hello From the Dashboard</h2>
+        <h2>Add A New Note</h2>
         <NoteForm handleNote={this.handleAddNote} />
+        <h2>Past Notes</h2>
+        <hr/>
         <NoteList notes={this.state.notes} deleteNote={this.handleRemoveNote} updateNote={this.handleUpdateNote} />
       </div>
     );

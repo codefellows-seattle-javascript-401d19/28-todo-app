@@ -1,4 +1,5 @@
 import React from 'react';
+import './landing.scss';
 
 class Landing extends React.Component {
   printReadme() {
@@ -8,9 +9,9 @@ class Landing extends React.Component {
   render() {
     return (
       <div className='landing'>
-        <pre>
-          {readme}
-        </pre>
+        <p>
+          {readme.match(/## Features([^#]+)/)[1]}
+        </p>
       </div>
     );
   }

@@ -1,0 +1,194 @@
+.display-none {
+  display: none;
+}
+
+.display-block {
+  display: block;
+}
+
+/* ----------- MODAL ----------- */
+
+.modal {
+  background-color: #969696;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  z-index: 10;
+}
+
+.modal .modal-main {
+  background-color: #ff723a;
+  position: absolute;
+  margin: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 70%;
+  min-height: 60%;
+  border: 10px ridge #c73f00;
+}
+
+.modal .modal-main .close-editor {
+  position: absolute;
+  top: 0.6em;
+  right: 0.6em;
+  width: 80px;
+  height: 30px;
+  border: black 2px outset;
+  border-radius: 8%;
+  font-weight: 1000;
+}
+
+.modal .modal-main h1 {
+  font-size: 2.3em;
+  text-align: center;
+  box-shadow: 0px 2px 2px black;
+  padding: 10px 0;
+  color: white;
+}
+
+.modal .modal-main .note-form {
+  min-height: 20em;
+  background-color: transparent;
+  display: block;
+  min-width: 0px;
+  margin: 0;
+  border: none;
+}
+
+.modal .modal-main .note-form input {
+  display: block;
+  font-size: 2.3em;
+  margin: 0 auto;
+  margin-top: 0.3em;
+}
+
+.modal .modal-main .note-form textarea {
+  margin: 10px 5%;
+  width: 90%;
+  min-height: 15em;
+  margin-bottom: 3.1em;
+  font-size: 1.8em;
+}
+
+.modal .modal-main .note-form button {
+  position: absolute;
+  bottom: .38em;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 2.2em;
+  padding: .1em;
+  margin: 0;
+  top: unset;
+}
+
+.dashboard h2 {
+  font-size: 2em;
+  text-align: center;
+  margin-top: 1em;
+}
+
+.dashboard .note-list {
+  text-align: left;
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px;
+  position: relative;
+}
+
+.dashboard .note-list .note-item {
+  border: 3px gray ridge;
+  background-color: #faddad;
+  padding: 10px;
+}
+
+.dashboard .note-list .note-item li {
+  list-style-type: none;
+}
+
+.dashboard .note-list .note-item li:first-child {
+  font-size: 2em;
+  text-decoration: underline;
+  font-weight: 500;
+  font-style: italic;
+  margin-bottom: 0.5em;
+}
+
+.dashboard .note-list .note-item li:nth-child(2) {
+  font-size: 1.2em;
+}
+
+.dashboard .note-list .note-item button {
+  position: absolute;
+  top: 1.2em;
+  right: 1.2em;
+}
+
+.dashboard .note-list .note-item .note-form {
+  background-color: #4db0c9;
+  display: inline-block;
+  min-width: 400px;
+  margin: 20px auto;
+  border: 6px ridge #ff002b;
+}
+
+.dashboard .note-list .note-item .note-form input {
+  display: block;
+  margin: 1em 3em;
+  font-size: 2em;
+}
+
+.dashboard .note-list .note-item .note-form textarea {
+  display: block;
+  width: 90%;
+  margin: 2em auto;
+  margin-bottom: 0;
+  min-height: 200px;
+  font-size: 1.2em;
+}
+
+.dashboard .note-list .note-item .note-form button {
+  font-size: 1.6em;
+  padding: .2em;
+  margin: 1em;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: #baddad;
+  min-height: 100vh;
+  overflow: auto;
+}
+
+div {
+  text-align: center;
+}
+
+header h1 {
+  text-align: center;
+  margin: 20px auto;
+  margin-bottom: 0;
+  font-size: 4em;
+  box-shadow: 0px 2px 2px black;
+}
+
+nav ul {
+  width: 100%;
+  padding: 8px;
+  text-align: center;
+  box-shadow: 0px 2px 2px black;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 3px;
+}
+

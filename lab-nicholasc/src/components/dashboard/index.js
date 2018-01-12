@@ -42,6 +42,17 @@ class Dashboard extends React.Component{
     this.setState({notes: tempNotes});
   }
 
+  handleUpdateNote(noteToUpdate){
+    this.setState(previousState => {
+      let updatedExpenses = previousState.notes.map(
+        note => note.id === noteToUpdate.id ?
+          noteToUpdate : note);
+
+      return {note : updatedExpenses};
+    });
+  }
+
+
   //==================================
   //hooks- React Calls these
   //=================================
@@ -50,7 +61,11 @@ class Dashboard extends React.Component{
       <div className="dashboard">
         <h1> I am the Dashboard </h1>
         <NoteForm handleComplete={this.handleAddNote} />
-        <NoteList notes={this.state.notes} handleRemoveNote={this.handleRemoveNote} />
+        <NoteList
+          notes={this.state.notes}
+          handleRemoveNote={this.handleRemoveNote}
+          handleUpdateNote={this.handleUpdateNote}
+        />
       </div>
     );
   }

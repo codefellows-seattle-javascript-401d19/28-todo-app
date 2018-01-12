@@ -41,6 +41,7 @@ class NoteForm extends Component {
   }
 
   render() {
+    const buttonText = this.props.note ? 'Update' : 'Create';
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -60,7 +61,7 @@ class NoteForm extends Component {
             onChange={this.handleChange}
           />
           <br />
-          <button type='submit'>Publish Note</button>
+          <button type='submit'>{buttonText}</button>
         </form>
       </div>
     );

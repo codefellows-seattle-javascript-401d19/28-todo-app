@@ -25,11 +25,14 @@ const NoteItem = ({ key, index, title, content, id, note, onRemove, onUpdate }) 
       <button
         className='notebuttondelete'
         onClick={() => handleRemove(id)}
-        type='button'>
+        type='button'
+      >
         Delete
       </button>
-      <Modal handleClose={hideModal} show={note.editing}>
-        <h1 id='editing'>Editing {note.title}</h1>
+      <Modal id='modal' handleClose={hideModal} show={note.editing}>
+        <div>
+          <p id='editing'>Editing:</p><div id='editingouter'>{note.title}</div>
+        </div>
         <NoteForm onComplete={updateAndClose} note={note} />
       </Modal>
     </div>

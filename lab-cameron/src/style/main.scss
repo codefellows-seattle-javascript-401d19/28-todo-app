@@ -83,21 +83,29 @@ img {
 
 // Dashboard
 
+    // NoteForm
+
 #noteform {
   text-align: center;
 }
 
 #note-title {
   margin-bottom: 1em;
-  width: 50%;
+  width: 80%;
+  border: solid 0.1em lightgrey;
+  padding: 5px;
 }
 
 #note-content {
   font-family: helvetica;
   resize: none;
-  width: 50%;
-  height: 100px;
+  width: 80%;
+  height: 10em;
+  border: solid 0.5px lightgrey;
+  padding: 5px;
 }
+
+    // Form Buttons
 
 .notebuttoncreate {
   font-weight: bolder;
@@ -107,9 +115,10 @@ img {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 1em;
   background-color: #7A1EA1;
   color: white;
+  margin: 5px;
   cursor: pointer;
 }
 
@@ -167,4 +176,21 @@ img {
 #innercontent {
   padding-bottom: 5px;
   font-weight: bolder;
+}
+
+// modal
+
+#editing {
+  font-weight: bolder;
+  padding: 5px;
+}
+
+#editingouter {
+  margin: 1em;
+  text-align: center;
+  align-items: flex-start;
+  word-wrap: break-word;
+  font-size: 20px;
+  padding: 5px;
+  font-weight: bold;
 }

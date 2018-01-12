@@ -6,7 +6,15 @@ class NoteList extends React.Component {
     return (
       <ul className='note-list'>
         {this.props.notes.map((note, index) => 
-          <NoteItem key={index} note={note} removeNote={this.props.removeNote} />)}
+          <li key={index}>
+            <NoteItem
+              note={note}
+              handleRemoveNote={this.props.handleRemoveNote}
+              handleUpdateNote={this.props.handleUpdateNote}
+              handleAddNote={this.props.handleAddNote}
+            />
+          </li>)
+        }
       </ul>
     );
   } 

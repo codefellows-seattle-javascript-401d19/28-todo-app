@@ -1,14 +1,34 @@
 import React from 'react';
+import NoteForm from '../note-form';
+import Modal from '../modal';
 
 class NoteItem extends React.Component {
   render() {
-    let note = this.props.note;
+    let {note, handleRemoveNote, handleAddNote, handleUpdateNote} = this.props;
+
+    let showModal = () => handleUpdateNote({...note, editing : true});
+    let hideModal = () => handleUpdateNote({...note, editing : false});
+
+    let updateClose = (note) => {
+      handleUpdateNote({...note, edting : false});
+    };
 
     return(
-      <li className='note'>
-        {note.title} : {note.content}
-        <button onClick={() => {this.props.removeNote(note.id);}}>Remove This Note</button>
-      </li>
+      <div className='note-item'>
+        <strong>{note.title}</strong> : {note.content}
+        <button onClick={handleRemoveNote.bind(null, note)}>Remove This Note</button>
+        <button onClick={showModal}>Update This Note</button>
+        <Modal handleModalClose={hideModal} show={note.editing}>
+          <h2>Updating {note.title}</h2>
+          <NoteForm
+            handleNote={updateClose}         
+            // handleUpdateNote={handleUpdateNote}         
+            // handleRemoveNote={handleRemoveNote}         
+            // handleComplete={updateClose}
+            note={note}
+            />
+        </Modal>
+      </div>
     );
   } 
 }

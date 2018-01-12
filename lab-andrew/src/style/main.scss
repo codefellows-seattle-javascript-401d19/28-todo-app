@@ -43,6 +43,9 @@ input {
   margin: 5px 0;
 }
 
+button {
+  margin: 0 5px;
+}
 ul {
   padding: 0;
 }
@@ -53,6 +56,10 @@ li {
 
 .submit-button {
   margin-bottom: 15px;
+}
+
+.delete-button {
+  color: red;
 }
 
 .note-item {

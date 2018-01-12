@@ -30,8 +30,9 @@ class NoteForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.note)
+    if (nextProps.note){
       this.setState(nextProps.note);
+    }
   }
 
   render(){

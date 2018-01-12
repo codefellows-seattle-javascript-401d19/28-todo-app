@@ -9,7 +9,7 @@ class NoteForm extends React.Component {
   constructor(props){
     super(props);
 
-    this.state = this.props.notes.length > 0 ? this.props.notes : emptyState;
+    this.state = this.props.note ? this.props.note : emptyState;
 
     this.onComplete = this.onComplete.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -30,13 +30,6 @@ class NoteForm extends React.Component {
       title: '',
       content: '',
     });
-    // for (var i = 0; i < this.props.notes.length; i++) {
-    //   let note = this.props.notes[i];
-    //   if(note.editing !== 'false'){
-    //     this.props.updateNote(note);
-    //   }
-    // }
-    // this.props.addNote(this.state);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -46,26 +39,25 @@ class NoteForm extends React.Component {
   }
 
   render() {
-    console.log(this);
-    let buttonText = this.props.notes.length > 0 ? 'Update a Note' : 'Add A Note';
+    let buttonText = this.props.note ? 'Update a Note' : 'Add Note';
     return (
-      <form>
+      <form className='note-form' onSubmit={this.onComplete}>
         <input
           value={this.state.title}
-          type="text"
-          name="title"
-          placeholder="title"
+          type='text'
+          name='title'
+          placeholder='title'
           onChange={this.handleChange}
         />
         <br />
         <input
           value={this.state.content}
-          type="text"
-          name="content"
-          placeholder="note"
+          type='text'
+          name='content'
+          placeholder='note'
           onChange={this.handleChange}
         />
-        <button onClick={this.onComplete}>{buttonText}</button>
+        <button type='submit'>{buttonText}</button>
       </form>
     );
   }

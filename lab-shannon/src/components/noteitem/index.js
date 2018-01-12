@@ -4,16 +4,16 @@ import NoteForm from '../noteform';
 
 class NoteItem extends React.Component {
   render() {
-    let note = this.props.notes[this.props.index];
-    let {removeNote, updateNote} = this.props;
-    let showEditView = () => updateNote({...note, editing: 'true'});
-    let hideEditView = () => updateNote({...note, editing: 'false'});
+    let {note, removeNote, updateNote} = this.props;
+    console.log(note, `note in NoteItem`);
+    let showEditView = () => updateNote({...note, editing: true});
+    let hideEditView = () => updateNote({...note, editing: false});
     let handleComplete = (note) => {
-      updateNote({...note, editing: 'false'});
+      updateNote({...note, editing: false});
     };
 
     return(
-      <div onDoubleClick={showEditView} className='div'>
+      <li onDoubleClick={showEditView} className='li'>
         <p>title: {note.title}</p>
         <p>note: {note.content}</p>
         <button id={note.id}
@@ -21,9 +21,9 @@ class NoteItem extends React.Component {
           Remove Note
         </button>
         <Modal hideExit={hideEditView} visible={note.editing}>
-          <NoteForm notes={note} handleComplete={handleComplete}/>
+          <NoteForm note={note} handleComplete={handleComplete}/>
         </Modal>
-      </div>
+      </li>
     );
   }
 }

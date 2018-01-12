@@ -8,7 +8,7 @@ class Modal extends React.Component {
 
     return (
       <div className={shownOrHidden}>
-        <button onClick={handleExit}>Exit</button>
+        <button onClick={handleExit}>Cancel</button>
         <main className={'main-modal'}>
           {this.props.children}
         </main>

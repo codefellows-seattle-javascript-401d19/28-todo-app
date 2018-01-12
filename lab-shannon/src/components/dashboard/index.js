@@ -15,17 +15,14 @@ class Dashboard extends React.Component{
     this.updateNote = this.updateNote.bind(this);
   }
 
-  addNote(noteToCreate, id = uuid(), editing = 'false', completed = 'false') {
-    let note = {
-      title : noteToCreate.title,
-      content : noteToCreate.content,
-      id,
-      editing,
-      completed,
-    };
+  addNote(noteToCreate) {
+    console.log(noteToCreate, `note`);
+    noteToCreate.id = uuid();
+    noteToCreate.editing = false;
+    noteToCreate.completed = false;
 
     this.setState(previousState => {
-      return {notes: [...previousState.notes, note]};
+      return {notes: [...previousState.notes, noteToCreate]};
     });
   }
 

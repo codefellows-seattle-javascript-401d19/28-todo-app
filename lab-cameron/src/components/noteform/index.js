@@ -30,11 +30,7 @@ class NoteForm extends Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    const { id, title, content, editing, complete } = this.state;
-
-    const note = { id, title, content, editing, complete };
-
-    this.props.onComplete(note);
+    this.props.onComplete(this.state);
 
     this.setState({
       id: uuidv1(),
@@ -42,6 +38,12 @@ class NoteForm extends Component {
       content: '',
       complete: false,
     });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.note) {
+      this.setState(nextProps.expense);
+    }
   }
 
   render() {

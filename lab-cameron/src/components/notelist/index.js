@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import NoteItem from '../noteitem';
 
-const NoteList = ({ notes, onRemove }) => {
+const NoteList = ({ notes, onRemove, onUpdate }) => {
   const handleRemove = key => {
     return onRemove(key);
+  };
+
+  const handleUpdate = note => {
+    return onUpdate(note);
   };
 
   return (
@@ -15,7 +19,9 @@ const NoteList = ({ notes, onRemove }) => {
               title={note.title}
               content={note.content}
               onRemove={handleRemove}
+              onUpdate={handleUpdate}
               id={note.id}
+              note={note}
             />
           </li>;
         })}

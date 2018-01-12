@@ -28,7 +28,7 @@ class Dashboard extends Component {
     const newNoteState = noteState.filter(note => {
       return note.id !== key;
     });
-    
+
     this.setState({ notes: [...newNoteState] });
   }
 
@@ -45,7 +45,11 @@ class Dashboard extends Component {
     return (
       <div>
         <NoteForm onComplete={this.addNote} />
-        <NoteList onRemove={this.removeNote} notes={this.state.notes} />
+        <NoteList
+          onRemove={this.removeNote}
+          onUpdate={this.updateNote}
+          notes={this.state.notes}
+        />
       </div>
     );
   }

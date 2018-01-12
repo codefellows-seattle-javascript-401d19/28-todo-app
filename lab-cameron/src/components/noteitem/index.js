@@ -17,10 +17,10 @@ const NoteItem = ({ key, index, title, content, id, note, onRemove, onUpdate }) 
   return (
     <div id='noteitems' onDoubleClick={showModal}>
       <div id='noteitemtitle'>
-        <p>Title: <br/> {title}</p>
+        <p id='innertitle'>Title:</p><p>{title}</p>
       </div>
       <div id='noteitemcontent'>
-        <p>Content: <br />{content}</p>
+        <p id='innercontent'>Content:</p><p>{content}</p>
       </div>
       <button
         className='notebuttondelete'

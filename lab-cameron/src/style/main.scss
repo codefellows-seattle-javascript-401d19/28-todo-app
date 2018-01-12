@@ -149,19 +149,22 @@ img {
 #noteitemtitle {
   margin: 1em;
   text-align: left;
-  font-size: 30px;
-  font-weight: bolder;
-  p {
-    font-size: 25px;
-  }
+  align-items: flex-start;
+  word-wrap: break-word;
 }
 
 #noteitemcontent {
   margin: 1em;
   text-align: left;
-  font-size: 30px;
+  word-wrap: break-word;
+}
+
+#innertitle {
+  padding-bottom: 5px;
   font-weight: bolder;
-  p {
-    font-size: 25px;
-  }
+}
+
+#innercontent {
+  padding-bottom: 5px;
+  font-weight: bolder;
 }

@@ -9,7 +9,7 @@ class NoteForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = this.props.expense ? this.props.expense : emptyState;
+    this.state = this.props.note ? this.props.note : emptyState;
 
     let memberFunctions = Object.getOwnPropertyNames(NoteForm.prototype);
     for (let functionName of memberFunctions) {

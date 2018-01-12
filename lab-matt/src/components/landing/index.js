@@ -19,13 +19,14 @@ class Landing extends React.Component {
 
 export default Landing;
 
-let readme = `# 28: Routing and Testing
+let readme = `
+# 28: Routing and Testing
 Description: **Lab 28 of Code Fellows JavaScript 401d19** </br>
 Author: **Matthew LeBlanc** </br>
 Date: **01/10/18**
 
 ## Features
-This lab features an app that allows a user to add and remove notes, by creating react components and manipulating state.
+This lab features an app that allows a user to add and remove notes, by creating react components and manipulating state. Later adding an update feature to the notes by double clicking them. And Eventually Adding sass to style.
 
 ## Tech/Framework Used
 - react
@@ -64,4 +65,5 @@ This lab features an app that allows a user to add and remove notes, by creating
 2. enzyme-adapter-react-16
 3. eslint
   - "eslint-plugin-react": "^7.5.1",
-4. jest`;
+4. jest
+`;

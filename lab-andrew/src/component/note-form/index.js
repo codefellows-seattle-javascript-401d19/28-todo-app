@@ -57,6 +57,7 @@ class NoteForm extends React.Component {
         />
         <br/>
         <input
+          className='submit-button'
           type='submit'
           value={buttonText}
         />

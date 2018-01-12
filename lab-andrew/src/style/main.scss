@@ -5,6 +5,16 @@ body {
   background: rgb(183, 255, 233);
 }
 
+nav {
+  li {
+    display: inline-block;
+  }
+  a {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
 main {
   border: 3px solid rgb(231, 126, 140);
   border-radius: 20px;
@@ -16,8 +26,17 @@ div {
   margin-top: 25px;
 }
 
-h1 {
+h1, h2, h3 {
   margin-top: 0;
+  margin-bottom: 5px;
+}
+
+h2 {
+  margin-top: 10px;
+}
+
+h4 {
+  font-size: 20px;
 }
 
 input {
@@ -30,4 +49,16 @@ ul {
 
 li {
   list-style: none;
+}
+
+.submit-button {
+  margin-bottom: 15px;
+}
+
+.note-item {
+  border: 1px solid rgb(231, 126, 140);
+  border-radius: 20px;
+  width: 375px;
+  margin: 0 auto;
+  margin-bottom: 10px;
 }

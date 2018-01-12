@@ -49,6 +49,7 @@ class Dashboard extends React.Component {
     return (
       <main>
         <h2>Dashboard</h2>
+        <h3>Add a Note!</h3>
         <NoteForm completeNote={this.addNote}/>
         <NoteList
           updateNote={this.updateNote}

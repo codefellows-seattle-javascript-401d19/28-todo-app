@@ -14,7 +14,7 @@ class NoteItem extends React.Component {
     };
 
     return(
-      <li onDoubleClick={showModal}>
+      <li className='note-item' onDoubleClick={showModal}>
         <h4>{this.props.note.title}</h4>
         <p>{this.props.note.content}</p>
         <button onClick={deleteNote.bind(this, note.id)}>Delete</button>

@@ -1,8 +1,8 @@
-# Codefellows javascript 401 lab 28 - REACT Routing - ToDo list
+# Codefellows javascript 401 lab 28-29 - REACT Routing/ Components/ Modal - ToDo list
 
 ## Purpose
 
-Learn to use react, webpack, and related technologies by creating an API which allows a user to create a To Do list with a title and content. All the items are displayed in a list. Each item has a button that allows the user to delete it.
+Learn to use react, webpack, and related technologies by creating an API which allows a user to create a To Do list with a title and content. All the items are displayed in a list. Each item has a button that allows the user to delete it and a button that allows the user to edit the item. (Doubleclicking the item also invokes edit.) Edit brings up a modal window that allows the user to edit and save the item.
 
 ## To use
 

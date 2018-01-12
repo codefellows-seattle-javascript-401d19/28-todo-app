@@ -4,7 +4,7 @@ import Modal from '../modal';
 
 class NoteItem extends React.Component {
   render() {
-    let {note, handleRemoveNote, handleAddNote, handleUpdateNote} = this.props;
+    let {note, handleRemoveNote, handleUpdateNote} = this.props;
 
     let showModal = () => handleUpdateNote({...note, editing : true});
     let hideModal = () => handleUpdateNote({...note, editing : false});
@@ -26,7 +26,7 @@ class NoteItem extends React.Component {
             // handleRemoveNote={handleRemoveNote}         
             // handleComplete={updateClose}
             note={note}
-            />
+          />
         </Modal>
       </div>
     );

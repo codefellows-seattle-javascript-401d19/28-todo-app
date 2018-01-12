@@ -32,7 +32,6 @@ class Dashboard extends React.Component {
   }
   
   handleSetLocalStorage() {
-
     try {
       localStorage.setItem('notes', JSON.stringify(this.state.notes));
     }
@@ -40,10 +39,9 @@ class Dashboard extends React.Component {
   }
 
   handleRemoveNote(noteToDelete) {
-    localStorage.removeItem('notes');
     this.setState(previousState => {
       return {notes: previousState.notes.filter(note => note.id !== noteToDelete.id)};
-    });
+    }, this.handleSetLocalStorage);
   }
 
   handleUpdateNote(noteToUpdate) {

@@ -11,30 +11,34 @@ webPackConfig.entry = `${__dirname}/src/main.js`;
 
 // -----------------------------------------------
 
-webPackConfig.output = {
-  filename: `bundle-[hash].js`,
-  path: `${__dirname}/build`,
+webPackConfig.output = { 
+  filename : 'bundle.[hash].js',
+  path : `${__dirname}/build`,
 };
 
 // -----------------------------------------------
 
-webPackConfig.plugins = [
+webPackConfig.plugins = [ 
   new HTMLPlugin(),
-  new ExtractTextPlugin('bundle.[hash].css'), 
-]; 
+  new ExtractTextPlugin({
+    filename: 'bundle[hash].css',
+    disable: process.env.NODE_ENV !== 'production',
+  }), 
+];
 
 // -----------------------------------------------
 
-webPackConfig.module = {
+webPackConfig.module = { 
   rules: [
-    {
-      test: /\.js$/, 
-      loader: 'babel-loader',
+    {   
+      test: /\.js$/,
       exclude: /node_modules/,
-    },
-    {
-      test: /\.scss$/,
+      loader: 'babel-loader',
+    },  
+    {   
+      test:  /\.scss$/,
       loader: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
         use: [
           'css-loader',
           'resolve-url-loader',
@@ -43,15 +47,19 @@ webPackConfig.module = {
             options: {
               sourceMap: true,
               includePaths: [`${__dirname}/src/style`],
-            },
-          },
-        ],
-      }),
-    },
+            },  
+          },  
+        ],  
+      }), 
+    },  
   ],
 };
 
+// -----------------------------------------------
+
 webPackConfig.devtool = 'eval-source-map';
+
+// -----------------------------------------------
 
 webPackConfig.devServer = {
   historyApiFallback: true,

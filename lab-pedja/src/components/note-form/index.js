@@ -24,7 +24,7 @@ class NoteForm extends React.Component {
   handleSubmit(event){
     event.preventDefault();
 
-    this.props.handleAddNote(this.state);
+    this.props.handleComplete(this.state);
     this.setState({
       title : '',
       content : ''
@@ -43,7 +43,10 @@ class NoteForm extends React.Component {
   // Hooks
   //------------------------------------------
 
-// TODO: Add componentWillReceiveProps Hook
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.note)
+      this.setState(nextProps.note);
+  }
 
   render() {
     let buttonText = this.props.note ? 'Update' : 'Create';

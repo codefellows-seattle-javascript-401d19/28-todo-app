@@ -56,9 +56,8 @@ img {
   font-weight: bolder;
 }
 
-.button {
+.navbutton {
   background-color: #68EFAD;
-  border: solid 3px #264f3b;
   border-radius: 5px;
   color: #264f3b;
   padding: 15px 32px;
@@ -98,4 +97,71 @@ img {
   resize: none;
   width: 50%;
   height: 100px;
+}
+
+.notebuttoncreate {
+  font-weight: bolder;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 18px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  background-color: #7A1EA1;
+  color: white;
+  cursor: pointer;
+}
+
+.notebuttondelete {
+  font-weight: bolder;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 18px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  background-color: #008975;
+  color: white;
+  cursor: pointer;
+}
+
+// Note List
+
+#notelist {
+  margin: 1em;
+  text-align: center;
+}
+
+// Note Items
+
+#noteitems {
+  text-align: center;
+  box-shadow: 5px 5px 5px grey;
+  margin: 1em auto;
+  border: 1px solid lightgrey;
+  padding: 2em;
+  width: 80%;
+  cursor: pointer;
+}
+
+#noteitemtitle {
+  margin: 1em;
+  text-align: left;
+  font-size: 30px;
+  font-weight: bolder;
+  p {
+    font-size: 25px;
+  }
+}
+
+#noteitemcontent {
+  margin: 1em;
+  text-align: left;
+  font-size: 30px;
+  font-weight: bolder;
+  p {
+    font-size: 25px;
+  }
 }

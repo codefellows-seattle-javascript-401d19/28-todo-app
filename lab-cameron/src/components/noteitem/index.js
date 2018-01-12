@@ -15,12 +15,21 @@ const NoteItem = ({ key, index, title, content, id, note, onRemove, onUpdate }) 
   };
 
   return (
-    <div onDoubleClick={showModal}>
-      <p>Title: {title}</p>
-      <p>Content: {content}</p>
-      <button onClick={() => handleRemove(id)} type='button'>Delete</button>
+    <div id='noteitems' onDoubleClick={showModal}>
+      <div id='noteitemtitle'>
+        <p>Title: <br/> {title}</p>
+      </div>
+      <div id='noteitemcontent'>
+        <p>Content: <br />{content}</p>
+      </div>
+      <button
+        className='notebuttondelete'
+        onClick={() => handleRemove(id)}
+        type='button'>
+        Delete
+      </button>
       <Modal handleClose={hideModal} show={note.editing}>
-        <h1>Editing {note.title}</h1>
+        <h1 id='editing'>Editing {note.title}</h1>
         <NoteForm onComplete={updateAndClose} note={note} />
       </Modal>
     </div>

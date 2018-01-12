@@ -63,7 +63,7 @@ class NoteForm extends Component {
             onChange={this.handleChange}
           />
           <br />
-          <button type='submit'>{buttonText}</button>
+          <button className='notebuttoncreate' type='submit'>{buttonText}</button>
         </form>
       </div>
     );

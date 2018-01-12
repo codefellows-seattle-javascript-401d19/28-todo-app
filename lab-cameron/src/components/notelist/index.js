@@ -11,7 +11,7 @@ const NoteList = ({ notes, onRemove, onUpdate }) => {
   };
 
   return (
-    <div>
+    <div id='notelist'>
       <ul>
         {notes.map((note) => {
           return <li key={note.id}>

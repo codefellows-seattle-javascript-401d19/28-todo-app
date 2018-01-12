@@ -5,15 +5,15 @@
   "main": "main.js",
   "scripts": {
     "test": "jest",
-    "watch": "webpack-dev-server --inline --hot",
+    "watch": "webpack-dev-server --inline --hot"
   },
+  "author": "Anthony Robinson",
+  "license": "ISC",
   "jest": {
     "moduleNameMapper": {
       "\\.(svg|eof|ttf|woff|woff2|scss|gif)$": "<rootDir>/src/__test__/mock-asset.js"
     }
   },
-  "author": "Anthony Robinson",
-  "license": "ISC",
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -39,6 +39,7 @@
   "devDependencies": {
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "image-webpack-loader": "^3.4.2",
     "jest": "^22.0.5"
   }
 }

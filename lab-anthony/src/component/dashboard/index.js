@@ -42,14 +42,28 @@ class Dashboard extends React.Component {
     });
   }
 
+  handleUpdateNote(noteToUpdate){
+    this.setState(previousState => {
+      let updatedNotes = previousState.notes.map(
+        note => note.id === noteToUpdate.id ? noteToUpdate : note);
+      return {notes: updatedNotes};
+    });
+  }
+
   // Hooks
 
   render(){
     return(
       <div className='dashboard'>
-        <h1>I am a Dashboard!</h1>
-        <NoteForm handleAddNote={this.handleAddNote}/>
-        <NoteList notes={this.state.notes} handleRemoveNote={this.handleRemoveNote}/>
+        <h3 className="welcome">Enter a note below</h3>
+        <NoteForm
+          handleComplete={this.handleAddNote}
+        />
+        <NoteList
+          notes={this.state.notes}
+          handleRemoveNote={this.handleRemoveNote}
+          handleUpdateNote={this.handleUpdateNote}
+        />
       </div>
     );
   }

@@ -12,11 +12,13 @@ class App extends React.Component{
         <BrowserRouter>
           <div>
             <header>
-              <h1> Todo List </h1>
+              <div className="todoTitleBody">
+                <h1 className="todoListTitle"> todo4u</h1>
+              </div>
               <nav>
-                <ul>
-                  <li><Link to='/'>Home</Link></li>
-                  <li><Link to='/dashboard'>Dashboard</Link></li>
+                <ul className="navItems">
+                  <li className="homelink"><Link to='/'>Home</Link></li>
+                  <li className="dashboardlink"><Link to='/dashboard'>Dashboard</Link></li>
                 </ul>
               </nav>
             </header>

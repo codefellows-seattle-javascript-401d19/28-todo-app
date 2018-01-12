@@ -1,13 +1,15 @@
 import React from 'react';
 
+let emptyState = {
+  title : '',
+  content : '',
+};
+
 class NoteForm extends React.Component {
   constructor(props){
     super(props);
 
-    this.state = {
-      title : '',
-      content : '',
-    };
+    this.state = this.props.note ? this.props.note : emptyState;
 
     // Binding Handlers
 
@@ -23,16 +25,15 @@ class NoteForm extends React.Component {
 
   handleSubmit(event){
     event.preventDefault();
-
-    this.props.handleAddNote(this.state);
+    this.props.handleComplete(this.state);
     this.setState({
-      title : this.state.title,
-      content : this.state.content,
+      title : '',
+      content : '',
     });
   }
 
   handleChange(event){
-    let {name,value} = event.target;
+    let {name, value} = event.target;
 
     this.setState({
       [name] : value,
@@ -41,7 +42,13 @@ class NoteForm extends React.Component {
 
   // Hooks
 
+  componentWillReceiveProps(nextProps){
+    if(nextProps.note)
+      this.setState(nextProps.note);
+  }
+
   render(){
+    let buttonText = this.props.note ? 'Update' : 'Create';
     return(
       <form className='note-form' onSubmit={this.handleSubmit}>
         <input
@@ -59,7 +66,7 @@ class NoteForm extends React.Component {
           value={this.state.content}
           onChange={this.handleChange}
         />
-        <button type='submit'> create note </button>
+        <button type='submit'> {buttonText} </button>
       </form>
     );
   }

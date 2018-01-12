@@ -12,11 +12,12 @@ class NoteList extends React.Component {
         <ul>
           {this.props.notes.map(note => {
             return(
-              <li key={note.id}>
+              <li className="oneNote" key={note.id}>
                 <NoteItem
-                  title={note.title}
-                  content={note.content}
-                  handleRemoveNote={this.props.handleRemoveNote.bind(null, note)}/>
+                  note={note}
+                  handleRemoveNote={this.props.handleRemoveNote}
+                  handleUpdateNote={this.props.handleUpdateNote}
+                />
               </li>
             );
           })}

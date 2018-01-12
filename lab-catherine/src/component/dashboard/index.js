@@ -36,9 +36,7 @@ class Dashboard extends React.Component {
     try {
       localStorage.setItem('notes', JSON.stringify(this.state.notes));
     }
-    catch(error) {
-      console.log(error);
-    }
+    catch(error) {} //eslint-disable-line
   }
 
   handleRemoveNote(noteToDelete) {
@@ -59,10 +57,13 @@ class Dashboard extends React.Component {
   }
 
   componentWillMount(notes) {
-    const cachedNotes = localStorage.getItem('notes');
-    if(cachedNotes) {
-      this.setState({ notes: JSON.parse(cachedNotes)});
+    try {
+      const cachedNotes = localStorage.getItem('notes');
+      if(cachedNotes) {
+        this.setState({ notes: JSON.parse(cachedNotes)});
+      }
     }
+    catch(error) {} //eslint-disable-line
   }
 
   render() {

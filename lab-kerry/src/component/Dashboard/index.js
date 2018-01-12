@@ -51,9 +51,10 @@ class Dashboard extends React.Component {
   /* Hooks - these React will call for you */
   //...............................................................
   render() {
+    let showHideClassName = this.state.notes.editing ? 'display-none' : 'dashboard';
     return (
-      <div className='dashboard'>
-        <h1>Dashboard!</h1>
+      <div className={showHideClassName}>
+        <h1>Notebook</h1>
         <NoteForm handleComplete={this.handleAddNote} />
         <ul>
           {
@@ -62,7 +63,8 @@ class Dashboard extends React.Component {
                 <NoteItem
                   note={note} 
                   handleRemoveNote={this.handleRemoveNote}
-                  handleUpdateNote={this.handleUpdateNote}/>
+                  handleUpdateNote={this.handleUpdateNote}
+                />
               </li>)
           }
         </ul>

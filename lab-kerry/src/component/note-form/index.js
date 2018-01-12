@@ -11,7 +11,7 @@ class NoteForm extends React.Component {
 
    
 
-    this.state = this.props.expense ? this.props.expense : defaultState;
+    this.state = this.props.note ? this.props.note : defaultState;
     
     //...............................................................
     /* Binding Handlers */

@@ -9,8 +9,8 @@ class Landing extends React.Component {
   render() {
     return (
       <div className='landing'>
-        <h1>My Notes!</h1>
-        <p>Go to your dashboard and start adding notes!</p>
+        <h1>Where am I?</h1>
+        <p>Go to your notebook and add some messages.</p>
 
       </div>
     );

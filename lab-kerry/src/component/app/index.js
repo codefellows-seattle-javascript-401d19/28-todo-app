@@ -10,11 +10,11 @@ class App extends React.Component {
         <BrowserRouter>
           <div>
             <header>
-              <h1>Just checking...</h1>
+              <h1>Note Float</h1>
               <nav>
                 <ul>
                   <li><Link to='/'>Home</Link></li>
-                  <li><Link to='/dashboard'>Dashboard</Link></li>
+                  <li><Link to='/dashboard'>Notebook</Link></li>
                 </ul>
               </nav>
             </header>

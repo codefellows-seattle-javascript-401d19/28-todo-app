@@ -25,12 +25,20 @@ class Dashboard extends React.Component {
     note.editing = false,
     note.completed = false,
     
-    localStorage.setItem('notes', JSON.stringify(this.state.notes));
-
     this.setState(previousState => {
       return {notes: [...previousState.notes, note]};
-    });
+    }, this.handleSetLocalStorage);
+   
+  }
   
+  handleSetLocalStorage() {
+
+    try {
+      localStorage.setItem('notes', JSON.stringify(this.state.notes));
+    }
+    catch(error) {
+      console.log(error);
+    }
   }
 
   handleRemoveNote(noteToDelete) {
@@ -50,13 +58,12 @@ class Dashboard extends React.Component {
     });
   }
 
-  componentDidMount(notes) {
+  componentWillMount(notes) {
     const cachedNotes = localStorage.getItem('notes');
     if(cachedNotes) {
       this.setState({ notes: JSON.parse(cachedNotes)});
     }
   }
-
 
   render() {
     return (

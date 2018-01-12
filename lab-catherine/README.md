@@ -13,6 +13,7 @@ In this project, I built a frontend Todo List application containing a Home Page
 
 In this application, I configured webpack to compile JavaScript and SASS into a bundle and configured babel to transpile JSX and ES6 to ES5 JavaScript. I was able to create and render React components to the DOM, add event listeners to React components, and update React component state.
 
+This application uses localStorage for persistence!
 
 ### Build
 

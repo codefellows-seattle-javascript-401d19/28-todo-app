@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import Landing from '../landing';
 import Dashboard from '../dashboard';
+import './app.scss';
 
 class App extends React.Component {
   render() {
@@ -10,7 +11,7 @@ class App extends React.Component {
         <BrowserRouter>
           <div>
             <header>
-              <h1> Hello </h1>
+              <h1> To Do List App </h1>
               <nav>
                 <ul>
                   <li>

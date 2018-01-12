@@ -45,7 +45,7 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div className="dashboard">
-        <p>This is the dashboard</p>
+        <p>Welcome to your dashboard</p>
         <NoteForm handleComplete={this.handleAddNote} />
         <NoteList
           notes={this.state.notes}

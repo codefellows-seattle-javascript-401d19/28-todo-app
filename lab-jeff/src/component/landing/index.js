@@ -4,7 +4,7 @@ class Landing extends React.Component {
   render() {
     return (
       <div className="landing">
-        <h1> Welcome to the Landing Page!</h1>
+        <h2> Welcome to my To Do List App. Click the Dashboard link above to get started.</h2>
       </div>
     );
   }

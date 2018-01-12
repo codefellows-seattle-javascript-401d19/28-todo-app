@@ -1,0 +1,45 @@
+$primary-background: rgb(150, 149, 149);
+
+html {
+	background-color: $primary-background;
+}
+nav li {
+	display: inline;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin: auto;
+}
+nav {
+	border: 3px solid black;
+}
+nav ul {
+	margin-left: auto;
+	margin-right: auto;
+	width: 200px;
+	padding-left: 0px;
+}
+
+input {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+textarea {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+form button {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+h1 {
+	text-align: center;
+}
+
+.note-list ul {
+	list-style-type: none;
+}

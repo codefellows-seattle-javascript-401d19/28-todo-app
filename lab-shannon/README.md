@@ -1,5 +1,5 @@
 ## Purpose
-This program helps you create and manage notes. You can view all existing notes on the dashboard. The dashboard also allows you to create new notes and delete existing notes.
+This program helps you create and manage notes. You can view all existing notes on the dashboard. The dashboard also allows you to create new notes and delete existing notes. By double clicking on an existing note you will be able to update the title or content.
 
 ## Set Up
 1. clone the repo into whatever directory you choose
@@ -8,7 +8,7 @@ This program helps you create and manage notes. You can view all existing notes 
 4. follow the link provided see the webpage
 
 ## Methods
-  Click "home" to go to the landing page. Click "dashboard" to view the dashboard where you can create a new note, view all existing notes, and remove a note.
+  Click "home" to go to the landing page. Click "dashboard" to view the dashboard where you can create a new note, view all existing notes, update a note, and remove a note.
 
 ## Technologies Used
   babel-core

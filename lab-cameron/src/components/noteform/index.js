@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import uuidv1 from 'uuid/v1';
 
+const emptyState = {
+  id: uuidv1(),
+  title: '',
+  content: '',
+  editing: false,
+  complete: false,
+};
+
 class NoteForm extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      id: uuidv1(),
-      title: '',
-      content: '',
-      editing: false,
-      complete: false,
-    };
+    this.state = this.props.note ? this.props.note : emptyState;
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);

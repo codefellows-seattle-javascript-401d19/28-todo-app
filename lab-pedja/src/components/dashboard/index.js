@@ -34,9 +34,22 @@ class Dashboard extends React.Component {
     });
   }
 
-  handleRemoveNote(note) {
-    const notes = this.state.notes.filter(noteToFilter => noteToFilter.id !== note.id);
-    this.setState({ notes });
+  handleRemoveNote(noteToRemove) {
+    this.setState(previousState => ({
+      notes: previousState.notes.filter(
+        notes => notes.id !== noteToRemove.id
+      ),
+    }));
+  }
+
+  handleUpdateNote(noteToUpdate){
+    this.setState(previousState => {
+      let updatedNote = previousState.notes.map(
+        note => note.id === noteToUpdate.id ?
+        noteToUpdate : note);
+
+      return {notes : updatedNote};
+    });
   }
 
   //------------------------------------------------------------
@@ -45,11 +58,12 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div className='dashboard'>
-      <h2>Dashboard - TODO list</h2>
-      <NoteForm handleAddNote={this.handleAddNote} />
+      <h2>Dashboard TODO list</h2>
+      <NoteForm handleComplete={this.handleAddNote} />
       <NoteList 
         notes={this.state.notes}
         handleRemoveNote={this.handleRemoveNote}
+        handleUpdateNote={this.handleUpdateNote}
       />      
      </div>
     )

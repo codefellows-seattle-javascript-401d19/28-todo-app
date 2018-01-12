@@ -1,13 +1,133 @@
+* {
+	font-family: 'Roboto', sans-serif;
+}
+
 body {
-  background-color: burlywood;
+  margin-top: 2em;
+  .dashboard {
+    width: 400px;
+    margin: 0 auto;
+    padding-top: 100px;
+    h2 {
+      text-align: center;
+      font-size: 2em;
+    }
+  }
+}
+
+.container h1 {
+	float: left;
+	width: auto;
+  margin: 2px 0;
+  padding-left: 10px;
+}
+
+header ul {
+	float: right;
+	padding: 0;
+	margin: 10px 0;
+}
+
+header li {
+	list-style-type: none;
+	display: inline-block;
+	padding-left: 5px;
+}
+
+header li a {
+	text-decoration: none;
+	display: block;
+	font-size: .8em;
+	color: #555;
+	padding: 7px 10px;
+	transition: all .1s;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+}
+
+header li > a:hover {
+	background: #f7f7f7;
+	border-radius: .2em;
+	-webkit-box-shadow: inset 0 0 0 1px #ededed;
 }
 
 .note-form {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  flex-direction: column;
+
+  > * {
+    margin: 10px;
+  }
+
+  input {
+    border:none;
+    padding-left: 10px;
+    border-bottom:3px solid #34495e;
+    padding:10px;
+    width:400px;
+    display:block;
+    font-size:16px;
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+  }
+
+  input:hover {
+    border:3px solid #34495e;    
+  }
+
+  .list-content {
+    width: 400px;
+    border: none;
+    border-bottom:3px solid #34495e;
+    padding: 10px;
+    font-size: 16px;
+    color: #555;
+    white-space: nowrap;
+    position: relative;
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+  }
+  .list-content:hover {
+    border:3px solid #34495e;
+  }
+
+  button{
+    line-height: 2em;
+    width: 20%;
+  }
+
+  button:hover {
+    background-color: rgb(199, 195, 195);
+    color: black;
+  }
+
+  button:active {
+    background-color: black;
+    color: #ededed;
+  }
 }
 
-.note-form > * {
-  margin: 10px;
+.landing {
+  padding: 100px;
+}
+
+.note-item {
+  margin-right: 5px;
+
+  p > strong {
+    text-transform: uppercase;
+  }
+
+  button {
+    line-height: 2em;
+    width: 20%;
+  }
+  
+  button:hover {
+    background-color: rgb(199, 195, 195);
+    color: black;
+  }
+
+  button:active {
+    background-color: black;
+    color: #ededed;
+  }
 }

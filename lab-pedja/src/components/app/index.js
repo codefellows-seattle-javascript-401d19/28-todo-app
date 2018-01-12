@@ -14,8 +14,8 @@ class App extends React.Component {
               <h1>TODO tracker</h1>
               <nav className='vertical-nav'>
                 <ul>
-                  <li><a><Link to='/'>Home</Link></a></li>
-                  <li><a><Link to='/dashboard'>Dashboard</Link></a></li>
+                  <li><Link to='/'>Home</Link></li>
+                  <li><Link to='/dashboard'>Dashboard</Link></li>
                 </ul>
               </nav>
             </header>

@@ -38,7 +38,7 @@ header li a {
 	text-decoration: none;
 	display: block;
 	font-size: .8em;
-	color: #666;
+	color: #555;
 	padding: 7px 10px;
 	transition: all .1s;
   font-family: 'Roboto', sans-serif;
@@ -54,19 +54,31 @@ header li > a:hover {
 .note-form {
   display: flex;
   flex-direction: column;
+
+  > * {
+    margin: 10px;
+  }
+
   input {
     border:none;
+    padding-left: 10px;
     border-bottom:3px solid #34495e;
-    padding:10px 0;
+    padding:10px;
     width:400px;
     display:block;
     font-size:16px;
+    transition: border linear 0.2s, box-shadow linear 0.2s;
   }
+
+  input:hover {
+    border:3px solid #34495e;    
+  }
+
   .list-content {
     width: 400px;
     border: none;
     border-bottom:3px solid #34495e;
-    padding: 10px 0;
+    padding: 10px;
     font-size: 16px;
     color: #555;
     white-space: nowrap;
@@ -76,14 +88,46 @@ header li > a:hover {
   .list-content:hover {
     border:3px solid #34495e;
   }
-}
 
-.note-form > * {
-  margin: 10px;
+  button{
+    line-height: 2em;
+    width: 20%;
+  }
+
+  button:hover {
+    background-color: rgb(199, 195, 195);
+    color: black;
+  }
+
+  button:active {
+    background-color: black;
+    color: #ededed;
+  }
 }
 
 .landing {
   padding: 100px;
 }
 
+.note-item {
+  margin-right: 5px;
 
+  p > strong {
+    text-transform: uppercase;
+  }
+
+  button {
+    line-height: 2em;
+    width: 20%;
+  }
+  
+  button:hover {
+    background-color: rgb(199, 195, 195);
+    color: black;
+  }
+
+  button:active {
+    background-color: black;
+    color: #ededed;
+  }
+}

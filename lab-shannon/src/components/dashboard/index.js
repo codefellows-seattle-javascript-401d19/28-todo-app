@@ -16,7 +16,6 @@ class Dashboard extends React.Component{
   }
 
   addNote(noteToCreate) {
-    console.log(noteToCreate, `note`);
     noteToCreate.id = uuid();
     noteToCreate.editing = false;
     noteToCreate.completed = false;

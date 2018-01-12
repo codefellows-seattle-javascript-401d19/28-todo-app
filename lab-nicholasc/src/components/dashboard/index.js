@@ -1,5 +1,6 @@
 import React from 'react';
 import NoteForm from '../note-form';
+import NoteList from '../note-list';
 import uuidv1 from 'uuid/v1';
 
 class Dashboard extends React.Component{
@@ -48,12 +49,7 @@ class Dashboard extends React.Component{
       <div className="dashboard">
         <h1> I am the Dashboard </h1>
         <NoteForm handleComplete={this.handleAddNote} />
-        <ul>
-          {
-            this.state.notes.map((note, index) =>
-              <li key={index}>{note.title}: {note.content}. Written on {note.createdOn}<button onClick={this.handleRemoveNote}>Remove Note</button></li>)
-          }
-        </ul>
+        <NoteList notes={this.state.notes} handleRemoveNote={this.handleRemoveNote} />
       </div>
     );
   }

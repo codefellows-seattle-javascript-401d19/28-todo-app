@@ -1,0 +1,28 @@
+.modal {
+  background-color: #ffcb799c;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  .modal-main {
+    background-color: rgb(211, 5, 230);
+    position: relative;
+    margin: 10px;
+
+    .close-editor {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      width: 40px;
+    }
+  }
+}
+
+.display-none {
+  display: none;
+}
+.display-block {
+  display: block;
+}

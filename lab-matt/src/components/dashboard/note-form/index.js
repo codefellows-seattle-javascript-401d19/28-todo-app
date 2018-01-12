@@ -1,35 +1,42 @@
 import React from 'react';
 import { notEqual } from 'assert';
 
+let emptyState = {
+  title: '',
+  content: '',
+};
+
 class NoteForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { 
-      title: '',
-      content: '',
+    this.state = this.props.note ? this.props.note : emptyState;
+
+
+    this.handleSubmit = (event) => {
+      event.preventDefault();
+      this.props.handleNote(this.state);
+      this.setState({
+        title: '',
+        content: '',
+      });
     };
-
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+  
+    this.handleChange = (event) => {
+      let { name, value } = event.target;
+      this.setState({ [name] : value });
+    };
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
-    this.props.addNote(this.state);
-    this.setState({
-      title: '',
-      content: '',
-    });
-  }
-
-  handleChange(event) {
-    let { name, value } = event.target;
-    this.setState({ [name] : value });
+  componentWillReceiveProps(props) {
+    if (props.note) {
+      this.setState(props.note);
+    }
   }
 
   render() {
+    let submitText = this.props.note ? 'Update Note' : 'Add Note';
+    
     return (
       <div>
         <form className='note-form' onSubmit={this.handleSubmit}>
@@ -45,7 +52,7 @@ class NoteForm extends React.Component {
             value ={this.state.content} 
             placeholder='Body Goes Here'
           ></textarea>
-          <button type='submit'>Create Note</button>
+          <button type='submit'> {submitText} </button>
         </form>
       </div>
     );

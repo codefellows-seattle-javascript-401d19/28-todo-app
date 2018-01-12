@@ -32,15 +32,10 @@ webPackConfig.module = {
       loader: 'babel-loader',
       exclude: /node_modules/,
     },
-    // {
-    //   test: /\.scss$/,
-    //   loader: 'style-loader!css-loader!sass-loader',
-    // },
     {
       test: /\.scss$/,
       loader: ExtractTextPlugin.extract({
         use: [
-          // 'style-loader',
           'css-loader',
           'resolve-url-loader',
           {

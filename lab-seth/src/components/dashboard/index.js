@@ -37,9 +37,9 @@ class Dashboard extends React.Component {
     this.setState(previousState => ({notes: [...previousState.notes, note]}));
   }
 
-  handleRemoveNote(id) {
+  handleRemoveNote(noteToDelete) {
   
-    this.setState(previousState => ({notes: previousState.notes.filter(note => note.id !== id)}));
+    this.setState(previousState => ({notes: previousState.notes.filter(note => note.id !== noteToDelete.id)}));
   }
 
   handleUpdateNote(noteToUpdate) {

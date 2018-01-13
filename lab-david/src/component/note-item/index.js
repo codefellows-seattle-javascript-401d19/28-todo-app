@@ -8,13 +8,16 @@ class NoteItem extends React.Component{
 
   render(){
     let { id, title, content } = this.props.note;
+    let {handleRemoveNote} = this.props;
+
     return(
-      <div>
+      <div className="note-item">
         <h2>Note title : {title}</h2>
         <p>Note content : {content}</p>
-        <button type="click" onClick={ this.props.handleRemoveNote.bind(this, this.props.note)
+        <button type="click" onClick={ this.props.handleRemoveNote.bind(null, this.props.note)
         }> Delete
         </button>
+        
       </div>
     );
   }

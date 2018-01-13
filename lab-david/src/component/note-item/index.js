@@ -8,7 +8,7 @@ class NoteItem extends React.Component{
 
   render(){
     let { id, title, content } = this.props.note;
-    let {handleRemoveNote} = this.props;
+    let {handleRemoveNote, handleUpdateNote} = this.props;
 
     return(
       <div className="note-item">

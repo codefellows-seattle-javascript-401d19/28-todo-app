@@ -1,16 +1,16 @@
 import React from 'react';
 import uuidv1 from 'uuid/v1';
 
+let emptyState = {
+  title : '',
+  content : '',
+}
 
 class NoteForm extends React.Component{
   constructor(props){
     super(props);
 
-    this.state = {
-      createdOn : new Date(),
-      title : '',
-      content : '',
-    };
+    this.state = this.props.note ? this.props.note : emptyState;
 
   //-----------------------------------------
   // Binding handlers
@@ -32,6 +32,7 @@ class NoteForm extends React.Component{
     this.setState({
       title : '',
       content : '',
+      createdOn : new Date(),
       id : uuidv1(),
     });
   }
@@ -49,6 +50,9 @@ class NoteForm extends React.Component{
   //-----------------------------------------
 
   render(){
+
+    let submitButtonText = this.props.note ? 'Update' : 'Create';
+    
     return(
       <form className='note-form' onSubmit={this.handleSubmit}>
         <input
@@ -65,7 +69,7 @@ class NoteForm extends React.Component{
           value={this.state.content}
           onChange={this.handleChange}
           />
-        <button type='submit'>save note</button>
+        <button type='submit'> {submitButtonText} </button>
       </form>
 
     );

@@ -43,7 +43,7 @@ class Dashboard extends React.Component {
   handleUpdateNote(noteToUpdate){
     this.setState(previousState => {
       let updatedNotes = previousState.notes.map(
-        notes => note.id === noteToUpdate.id ? noteToUpdate : note);
+        note => note.id === noteToUpdate.id ? noteToUpdate : note);
 
       return { notes : updatedNotes };
     });

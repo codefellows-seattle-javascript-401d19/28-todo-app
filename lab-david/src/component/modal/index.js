@@ -9,6 +9,7 @@ class Modal extends React.Component{
       <div className = {displayToggleClassName} >
         <button onClick={this.props.handleClose}> Close </button>
         <main className='modal-main'>
+          {this.props.children}
         </main>
       </div>
     )

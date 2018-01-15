@@ -24,7 +24,7 @@ body {
 .navItems {
   margin-left: auto;
   margin-right: auto;
-  width: 237px;
+  width: 240px;
 }
 
 .homelink {
@@ -69,11 +69,12 @@ a:visited {
 
 a:focus {
   background: #DD0800;
+  border-radius: 3px;
 }
 
 a:hover {
   background: #DD0800;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 a:active {
@@ -133,14 +134,18 @@ a:active {
 
 .buttons {
   display: block;
-  // position: relative;
   transform: translate(375%,0%);
   width: 100px;
 }
 
 .x {
-  transform: translate(750%,1000%);
-  -webkit-box-shadow:5px 5px 5px #080606;
-  -moz-box-shadow:5px 5px 5px #080606;
-  box-shadow:5px 5px 5px #080606;
+  transform: translate(700%,1400%);
+  -webkit-box-shadow:2px 2px 2px #080606;
+  -moz-box-shadow:2px 2px 2px #080606;
+  box-shadow:2px 2px 2px #080606;
+}
+
+.landing {
+  margin-top: 100px;
+  text-align: center;
 }

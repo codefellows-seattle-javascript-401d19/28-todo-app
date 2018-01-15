@@ -56,11 +56,11 @@ class Dashboard extends React.Component {
       <div className='dashboard'>
         <h1>This is the dashboard page..</h1>
         <NoteForm 
-          handleAddNote={this.handleAddNote}
+          handleComplete={this.handleAddNote}
         />
         
         <NoteList 
-          notes={this.state.notes} 
+          notes={this.state.notes}
           handleRemoveNote={this.handleRemoveNote} 
           handleUpdateNote={this.handleUpdateNote}
         />  

@@ -28,7 +28,7 @@ class NoteForm extends React.Component{
   handleSubmit(event){
     event.preventDefault();
 
-    this.props.handleAddNote(this.state);
+    this.props.handleComplete(this.state);
     this.setState({
       title : '',
       content : '',

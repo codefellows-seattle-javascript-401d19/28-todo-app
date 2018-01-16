@@ -4,28 +4,26 @@ import Modal from '../modal';
 
 class NoteItem extends React.Component {
   render() {
-    let {note, handleRemoveNote, handleUpdateNote} = this.props;
+    // let {note, handleRemoveNote, handleUpdateNote} = this.props;
 
-    let showModal = () => handleUpdateNote({...note, editing : true});
-    let hideModal = () => handleUpdateNote({...note, editing : false});
+    let showModal = () => this.props.handleUpdateNote({ ...this.props.note, editing : true});
+    let hideModal = () => this.props.handleUpdateNote({ ...this.props.note, editing : false});
 
     let updateClose = (note) => {
-      handleUpdateNote({...note, edting : false});
+      this.props.handleUpdateNote({...note, edting : false});
     };
 
     return(
+
       <div className='note-item'>
-        <strong>{note.title}</strong> : {note.content}
-        <button onClick={handleRemoveNote.bind(null, note)}>Remove This Note</button>
+        <strong>{this.props.note.title}</strong> : {this.props.note.content}
+        <button className='remove-note' onClick={this.props.handleRemoveNote.bind(null, this.props.note)}>Remove This Note</button>
         <button onClick={showModal}>Update This Note</button>
-        <Modal handleModalClose={hideModal} show={note.editing}>
-          <h2>Updating {note.title}</h2>
+        <Modal handleModalClose={hideModal} show={this.props.note.editing}>
+          <h2>Updating {this.props.note.title}</h2>
           <NoteForm
-            handleNote={updateClose}         
-            // handleUpdateNote={handleUpdateNote}         
-            // handleRemoveNote={handleRemoveNote}         
-            // handleComplete={updateClose}
-            note={note}
+            handleComplete={updateClose}         
+            note={this.props.note}
           />
         </Modal>
       </div>

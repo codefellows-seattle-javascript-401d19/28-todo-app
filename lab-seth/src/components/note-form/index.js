@@ -3,8 +3,6 @@ import React from 'react';
 let newState = {
   title: '',
   content: '',
-  editing: false,
-  completed: false,
 };
 
 
@@ -28,15 +26,19 @@ class NoteForm extends React.Component {
   //=======================================================
   // Member functions
 
+
+  handleChange(event) {
+    let { name, value } = event.target;
+
+    this.setState({
+      [name]: value,
+    });
+  }
+  
   handleSubmit(event){
     event.preventDefault();
 
-    this.props.handleNote({
-      title : event.target.title.value,
-      content : event.target.content.value,
-      editing : false,
-      completed: true,
-    });
+    this.props.handleComplete(this.state);
 
     this.setState({
       title : '',
@@ -44,13 +46,6 @@ class NoteForm extends React.Component {
     });
   }
 
-  handleChange(event){
-    let {name, value} = event.target;
-
-    this.setState({
-      [name] : value,
-    });
-  }
 
   //=======================================================
   // Hooks

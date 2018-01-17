@@ -24,7 +24,7 @@ class NoteItem extends React.Component {
           <NoteForm handleComplete={updateAndClose} note={note}/>
         </Modal>
       </div>
-    )
+    );
   }
 }
 

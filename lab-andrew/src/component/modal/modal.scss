@@ -1,0 +1,33 @@
+.modal{
+  position: fixed;
+  margin-top: 0;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background: rgb(231, 126, 140);
+
+  .modal-main{
+    background: rgb(183, 255, 233);
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 25px;
+    padding-bottom: 0px;
+    height: auto;
+    width: 325px;
+  }
+}
+
+.display-block{
+  display: block;
+}
+
+.display-none{
+  display: none;
+}
+
+.close {
+  position: relative;
+  margin-top: 25px;
+  top: 50%;
+}

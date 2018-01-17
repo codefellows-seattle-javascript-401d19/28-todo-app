@@ -3,7 +3,7 @@
 This is a note list saver thing built on ReactJS. 
 
 ## Motivation
-I want to build beautiful things (this one doesn't count).
+I want to build beautiful things (this one doesn't count as a beautiful thing).
 
 ## Description
 This app lets you create and save notes for a browser window session. 

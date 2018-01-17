@@ -10,7 +10,7 @@ webPackConfig.entry = `${__dirname}/src/main.js`;
 webPackConfig.output = {
   filename : 'bundle.[hash].js',
   path : `${__dirname}/build`,
-}
+};
 //-----------------------------------------
 webPackConfig.plugins = [
   new HTMLPlugin(),
@@ -35,16 +35,16 @@ webPackConfig.module = {
             options: {
               sourceMap : true,
               includePaths: [`${__dirname}/src/style`],
-            }
-          }
-        ]
+            },
+          },
+        ],
       }),
-    }
+    },
   ],
 };
 //-----------------------------------------
 webPackConfig.devtool = 'eval-source-map';
 
 webPackConfig.devServer = {
-  historyApiFallback: true
+  historyApiFallback: true,
 };

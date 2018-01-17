@@ -70,10 +70,5 @@ class Dashboard extends React.Component {
   }
 }
 
-// this was line 50 : 
-// <NoteList notes={this.state.notes} handleRemoveNote={this.handleRemoveNote} />
-// <NoteItem
-//             note={this.notes.title}
-//           />
 
 export default Dashboard;

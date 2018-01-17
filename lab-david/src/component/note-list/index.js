@@ -11,10 +11,10 @@ class NoteList extends React.Component {
       <div className='noteList'>
         <h2>Notes:</h2>
         <ul>
-        {
-          this.props.notes.map((note,index) => (
-            <NoteItem key={index} note={note} handleRemoveNote={this.props.handleRemoveNote} handleUpdateNote={this.props.handleUpdateNote}/>
-          ))}
+          {
+            this.props.notes.map((note,index) => (
+              <NoteItem key={index} note={note} handleRemoveNote={this.props.handleRemoveNote} handleUpdateNote={this.props.handleUpdateNote}/>
+            ))}
         </ul>
       </div>
     );

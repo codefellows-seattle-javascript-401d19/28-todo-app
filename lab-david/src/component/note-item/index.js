@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from '../modal';
-import NoteForm from '../note-form'
+import NoteForm from '../note-form';
 
 class NoteItem extends React.Component{
 
@@ -19,7 +19,7 @@ class NoteItem extends React.Component{
     
     let updateAndClose=(note) => {
       handleUpdateNote({...note, editing:false});
-    }
+    };
 
 
     return(

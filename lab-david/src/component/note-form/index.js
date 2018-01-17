@@ -4,7 +4,7 @@ import uuidv1 from 'uuid/v1';
 let emptyState = {
   title : '',
   content : '',
-}
+};
 
 class NoteForm extends React.Component{
   constructor(props){
@@ -12,10 +12,10 @@ class NoteForm extends React.Component{
 
     this.state = this.props.note ? this.props.note : emptyState;
 
-  //-----------------------------------------
-  // Binding handlers
-  //-----------------------------------------
-  let memberFunctions = Object.getOwnPropertyNames(NoteForm.prototype);
+    //-----------------------------------------
+    // Binding handlers
+    //-----------------------------------------
+    let memberFunctions = Object.getOwnPropertyNames(NoteForm.prototype);
     for(let functionName of memberFunctions){
       if(functionName.startsWith('handle')){
         this[functionName] = this[functionName].bind(this);
@@ -41,7 +41,7 @@ class NoteForm extends React.Component{
     let {name, value} = event.target;
 
     this.setState({
-      [name] : value
+      [name] : value,
     });
   }
 
@@ -61,14 +61,14 @@ class NoteForm extends React.Component{
           placeholder='note title here'
           value={this.state.title}
           onChange={this.handleChange}
-          />
+        />
         <input
           type='text'
           name='content'
           placeholder='note content here'
           value={this.state.content}
           onChange={this.handleChange}
-          />
+        />
         <button type='submit'> {submitButtonText} </button>
       </form>
 

@@ -9,6 +9,8 @@ Dalton Carr
 
 This application is a simple TODO manager. You can add a task with a title and description then delete it when it's done. 
 
+UPDATE- You can now edit an already created list item and a nice modal box will pop up to edit it. 
+
 
 ### Code Style
 

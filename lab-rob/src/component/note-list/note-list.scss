@@ -1,0 +1,32 @@
+.note-list {
+  list-style: none;
+
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5em;
+  width: 50%;
+  padding-left: 0;
+  margin: 1em auto;
+
+  li {
+    margin-bottom: 1.5em;
+  }
+
+  .remove-note {
+    font-family: 'Comfortaa', cursive;    
+    border-radius: 50%;
+    background-color: white;
+    transition: all, .3s;
+    outline: none;
+    cursor: pointer;    
+  }
+
+  .remove-note:hover {
+    background: #b082df;
+  }
+
+  .remove-note:active {
+    border: 2px solid white;
+    background: #dfbfff;
+    color: #f6ebff;
+  }
+}

@@ -8,13 +8,9 @@ import NoteForm from '../components/noteform';
 
 describe('noteform.js', () => {
   test('Test for initial state', () => {
-    let mountedDashboard = Enzyme.mount(<NoteForm />);
+    let mountedNoteForm = Enzyme.mount(<NoteForm />);
 
-    expect(mountedDashboard.state('id')).toBeTruthy();
-    expect(mountedDashboard.state('title')).toEqual('');
-    expect(mountedDashboard.state('content')).toEqual('');
-    expect(mountedDashboard.state('editing')).toEqual(false);
-    expect(mountedDashboard.state('complete')).toEqual(false);
-
+    expect(mountedNoteForm.state('title')).toEqual('');
+    expect(mountedNoteForm.state('content')).toEqual('');
   });
 });

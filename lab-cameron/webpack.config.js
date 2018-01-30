@@ -13,10 +13,7 @@ webPackConfig.output = {
 
 webPackConfig.plugins = [
   new HTMLPlugin(),
-  new ExtractTextPlugin({
-    filename: 'bundle[hash].css',
-    disable: process.env.NODE_ENV !== 'production',
-  }),
+  new ExtractTextPlugin('bundle[hash].css'),
 ];
 
 webPackConfig.module = {
@@ -29,7 +26,6 @@ webPackConfig.module = {
     {
       test:  /\.scss$/,
       loader: ExtractTextPlugin.extract({
-        fallback: 'style-loader',
         use: [
           'css-loader',
           'resolve-url-loader',

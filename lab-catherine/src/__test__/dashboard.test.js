@@ -11,5 +11,6 @@ describe('Dashboard', () => {
     let mountedDashboard = Enzyme.mount(<Dashboard />);
 
     expect(mountedDashboard.state('notes')).toEqual([]);
+   
   });
 });

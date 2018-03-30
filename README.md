@@ -1,76 +1,81 @@
-401 JS --  Lab 28 Todo
-===
+# Code Fellows: Seattle 401 JavaScript - 401d19
 
-## Submission Instructions
-  * Work in a fork of this repository
-  * Work in a branch on your fork
-  * Write all of your code in a directory named `lab-` + `<your name>` **e.g.** `lab-duncan`
-  * Submit a pull request to this repository
-  * Submit a link to your pull request on canvas
-  * Submit a question, observation, and how long you spent on canvas  
+## Lab 28 & 29: Todo List
 
-## Configuration    
-* **README.md** -- with documentation about your lab
-* **.babelrc** -- with all dependencies and dev-dependencies 
-* **.eslintrc.json** -- with the class .eslintrc.json file
-* **.gitignore** -- with a robust gitignore
-* **.eslintignore** -- with the class .eslintignore
-* **package.json** -- with all dependencies and dev-dependencies 
-* **webpack.config.js** -- with webpack config
-* **src/** -- containing the frontend code
-* **src/\_\_test\_\_** -- containing the frontend tests
-* **src/component** -- containing react components
-* **src/main.js** -- containing the entire app component
-* **src/style** -- containing your sass
-* **src/style/main.scss** -- for importing and including reset and base
+![Todo List Overview](./assets/todo-list-overview.png)
 
- 
-## Feature Tasks 
-create the following components and structure them according to the following diagram.  
-``` 
-App
-  Landing
-  Dashboard
-    NoteForm
-    NoteList
-      Noteitem
-```
-#### App
-* The app component should manage the frontend routes and have a navbar
-* the `/` route should display the `Landing` component
-* the `/dashboard` route should display the `Dashboard` component
+### Author: 
+Catherine Looper
 
-#### Landing
-* The landing component should display a brief description of the to do app
+### Motivation
 
-#### Dashboard Component 
-* The dashboard component should manage the entire **application state**. 
-* The state should contain a notes array
-* It should have a bound `addNote(note)` method that adds a note to `state.notes`
-  * each note that is added should have the following data
-    * `id`: always should contain the result of `uuid.v1()`
-    * `editing`: false by default
-    * `completed`: false by default
-    * `content`: user provided content
-    * `title`: user provided title
-* It should have a bound `removeNote(note)` method that removes a note from `state.notes` based on its `id`
+In this project, I built a frontend Todo List application containing a Home Page with a brief description about the application, and a Dashboard page where users can create their own Todo List. To create a Todo List, users can enter a note title and description and click `Create`. Users can edit any note by clicking the corresponding `Edit` button. This will take the user to a modal editing view where users can make edits to their notes. If a user would like to save the edit, they may click the `Update` button. If the user does not want to save their edit, they can click the `close` button, which will take the user back to their Dashboard. Users also have the ability to remove any of their created notes by clicking the `Delete` button next to the note they would like to remove. 
 
-#### NoteForm Component
-* `onComplete` the NoteForm should add a note to the application state
+In this application, I configured webpack to compile JavaScript and SASS into a bundle and configured babel to transpile JSX and ES6 to ES5 JavaScript. I was able to create and render React components to the DOM, add event listeners to React components, and update React component state.
 
-#### NoteList Component 
-* should display an unordered list of NoteItem components
+This application uses localStorage for persistence!
 
-#### NoteItem
-* should display the notes content and title
-* should display a delete button
-  * `onClick` the note should be removed from the application state
+### Build
 
-## Test
-* Test Dashboard
-  * Test the initial state
-* Test NoteForm
-  * Test the initial state
+![Todo List Tree](./assets/todolist-tree.png)
 
-##  Documentation  
-Write a description of the project in your README.md
+#### Sample Note View:
+![Sample Notes](./assets/example-notes.png)
+
+#### Modal Update Note View:
+
+![Sample Modal Update View](./assets/modal-view.png)
+
+### Limitations
+
+To use this app - it is assumed that the user has familiarity with the tech and frameworks listed below.
+
+### Code Style
+
+Standard JavaScript with ES6, SASS, CSS, HTML, React
+
+### Tech/Framework Used
+
+* babel-core
+* babel-loader
+* babel-plugin-transform-object-rest-spread
+* babel-preset-env
+* babel-preset-react
+* css-loader
+* eslint-plugin-react
+* extract-text-webpack-plugin
+* html-webpack-plugin
+* node-sass
+* react
+* react-dom
+* react-router-dom
+* resolve-url-loader
+* sass-loader
+* superagent
+* uuid
+* webpack
+* webpack-dev-server
+* eslint
+* enzyme
+* enzyme-adapter-react-16
+* jest
+
+### How to use?
+
+* Step 1. Fork and Clone the Repository.
+* Step 2. `npm install`
+* Step 3. `npm run watch`
+* Step 4. You should now be able to visit: `http://localhost:8080/` to view the application
+* Step 5. The loading/home page will be displayed - to access the Todo list - click on the nav bar item `Dashboard`.
+* Step 6. To create a new note, enter a title and a description and click the `Create` button. 
+* Step 7. Notes can be edited by clicking the `Edit` button. Once the note is edited, click `Update` to save or click `close` if you do not want to save your edits.
+* Step 8. Notes can be removed by clicking the corresponding `Delete` button.
+
+### Credits
+
+* Code Fellows
+
+### License
+
+MIT © Catherine Looper
+

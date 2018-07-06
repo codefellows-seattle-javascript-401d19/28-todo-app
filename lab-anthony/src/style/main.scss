@@ -1,0 +1,151 @@
+$primary: #f15d35;
+$language-spacing: .5em;
+
+body {
+  background-color: $primary;
+  font-family: helvetica;
+}
+
+.todoTitleBody {
+  background: #590606;
+  width:180px;
+  height:40px;
+  top:50%;
+  left:50%;
+  transform: translate(-9%,-51%);
+  border-radius: 1px;
+}
+
+.todoListTitle {
+  text-align: center;
+  color: #EE0606;
+}
+
+.navItems {
+  margin-left: auto;
+  margin-right: auto;
+  width: 240px;
+}
+
+.homelink {
+  display: inline;
+  width: 300px;
+  font-size: 20px;
+  text-transform: uppercase;
+  border: 1px transparent;
+  padding: 10px;
+  box-shadow: 1px 1px;
+  margin: 3px;
+  padding: 3px;
+  border-radius: 4px;
+}
+
+.dashboardlink {
+  display: inline;
+  width: 300px;
+  font-size: 20px;
+  text-transform: uppercase;
+  border: 1px transparent;
+  padding: 10px;
+  box-shadow: 1px 1px;
+  margin: 3px;
+  padding: 3px;
+  border-radius: 4px;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+}
+
+a:link {
+  color: #4C0800;
+}
+
+a:visited {
+  color: #4C0800;
+}
+
+a:focus {
+  background: #DD0800;
+  border-radius: 3px;
+}
+
+a:hover {
+  background: #DD0800;
+  border-radius: 3px;
+}
+
+a:active {
+  background: #DD0800;
+  color: #DD9B00;
+}
+
+.welcome {
+  position: relative;
+  text-align: center;
+  margin-top: 70px;
+  width:500px;
+  height:40px;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  border-top: 1px;
+  border-radius: 5px;
+}
+
+.oneNote {
+  list-style-type: none;
+}
+
+.note-form {
+  text-align: center;
+  transform: translate(0%,0%);
+}
+
+.note-item {
+  background: #eedfde;
+  position: relative;
+  margin-top: 25px;
+  width: 375px;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  border-top: 1px;
+  border-radius: 5px;
+}
+
+.noteTitle {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
+.noteContent {
+  display: inline-block;
+  float: left;
+}
+
+.note {
+  text-align: center;
+}
+
+.buttons {
+  display: block;
+  transform: translate(375%,0%);
+  width: 100px;
+}
+
+.x {
+  transform: translate(700%,1400%);
+  -webkit-box-shadow:2px 2px 2px #080606;
+  -moz-box-shadow:2px 2px 2px #080606;
+  box-shadow:2px 2px 2px #080606;
+}
+
+.landing {
+  margin-top: 100px;
+  text-align: center;
+}

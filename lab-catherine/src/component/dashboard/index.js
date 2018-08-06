@@ -42,7 +42,11 @@ class Dashboard extends React.Component {
     this.setState(previousState => {
       return {notes: previousState.notes.filter(note => note.id !== noteToDelete.id)};
     }, this.handleSetLocalStorage);
+
+    // this.setState({notes: this.state.notes.filter(noteToDelete => noteToDelete.id !== note)});
   }
+
+
 
   handleUpdateNote(noteToUpdate) {
     localStorage.removeItem('notes');
@@ -65,6 +69,7 @@ class Dashboard extends React.Component {
   }
 
   render() {
+    console.log(this.state);
     return (
       <div className='dashboard'>
         <h2>Create your own Todo List:</h2>
